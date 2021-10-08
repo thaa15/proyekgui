@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>518</width>
-    <height>401</height>
+    <width>776</width>
+    <height>547</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,11 +17,17 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>270</x>
       <y>80</y>
-      <width>81</width>
-      <height>21</height>
+      <width>251</width>
+      <height>61</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Historic</family>
+      <pointsize>27</pointsize>
+     </font>
     </property>
     <property name="text">
      <string>LOG IN</string>
@@ -30,65 +36,73 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit">
+   <widget class="QTextEdit" name="nama_input">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>120</y>
-      <width>151</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="html">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Nama&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="textEdit_2">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
+      <x>150</x>
       <y>150</y>
-      <width>151</width>
-      <height>21</height>
+      <width>461</width>
+      <height>51</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="tabChangesFocus">
+     <bool>true</bool>
     </property>
     <property name="html">
      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;NPM&lt;/p&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:16pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="signin_button">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>190</y>
-      <width>75</width>
-      <height>23</height>
+      <x>320</x>
+      <y>290</y>
+      <width>141</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>SIGN IN</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="camera_button">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>220</y>
-      <width>131</width>
-      <height>23</height>
+      <x>270</x>
+      <y>350</y>
+      <width>251</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
      <string>Login dengan kamera</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="npm_input">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>220</y>
+      <width>461</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="tabChangesFocus">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -97,8 +111,8 @@ p, li { white-space: pre-wrap; }
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>518</width>
-     <height>22</height>
+     <width>776</width>
+     <height>18</height>
     </rect>
    </property>
   </widget>

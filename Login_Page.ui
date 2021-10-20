@@ -27,14 +27,14 @@
      <font>
       <family>Raleway Bold</family>
       <pointsize>14</pointsize>
-      <weight>9</weight>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 75 14pt &quot;Raleway Bold&quot;;
-color: rgb(161, 209, 210)
+     <string notr="true">font: 14pt &quot;Raleway Bold&quot;;
+color: rgb(161, 209, 210);
 </string>
     </property>
     <property name="text">
@@ -55,11 +55,17 @@ color: rgb(161, 209, 210)
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <family>Raleway</family>
+      <pointsize>8</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(237, 238, 233)
+     <string notr="true">background-color: rgb(237, 238, 233);
+font: 8pt &quot;Raleway&quot;;
+color:rgb(1, 42, 59);
 </string>
     </property>
     <property name="tabChangesFocus">
@@ -69,8 +75,8 @@ color: rgb(161, 209, 210)
      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Raleway'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'MS Shell Dlg 2'; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QPushButton" name="signin_button">
@@ -122,11 +128,17 @@ color:rgb(237, 238, 233)
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <family>Raleway</family>
+      <pointsize>8</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgb(237, 238, 233)</string>
+     <string notr="true">background-color: rgb(237, 238, 233);
+font: 8pt &quot;Raleway&quot;;
+color:rgb(1, 42, 59);</string>
     </property>
     <property name="tabChangesFocus">
      <bool>true</bool>

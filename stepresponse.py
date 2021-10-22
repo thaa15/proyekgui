@@ -1,10 +1,12 @@
+# Plotter Class
+
 from PyQt5.QtWidgets import *
 
 from matplotlib.backends.backend_qt5agg import FigureCanvas
 from matplotlib.backends.backend_qt5agg import ( NavigationToolbar2QT  as  NavigationToolbar )
 from matplotlib.figure import Figure
 
-class  firplotet(QWidget):
+class  stepresponse(QWidget):
     def __init__(self, parent = None):
         QWidget.__init__(self,parent)
 
@@ -20,6 +22,6 @@ class  firplotet(QWidget):
         self.canvas.axes.clear()
         self.canvas.figure.tight_layout()
         self.setLayout(vertical_layout)
-        self.canvas.axes.set_title("Signal")
+        self.canvas.axes.set_title("Step Response")
         self.canvas.figure.tight_layout()
         self.canvas.draw()

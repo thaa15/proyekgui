@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>776</width>
-    <height>547</height>
+    <width>785</width>
+    <height>740</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,17 +17,25 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>0</y>
-      <width>471</width>
-      <height>131</height>
+      <x>320</x>
+      <y>-10</y>
+      <width>231</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Segoe UI Historic</family>
-      <pointsize>20</pointsize>
+      <pointsize>-1</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	font: bold 15px;
+color: white;
+}</string>
     </property>
     <property name="text">
      <string>MODUL FILTER FIR</string>
@@ -39,11 +47,27 @@
    <widget class="QPushButton" name="back_button">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>650</x>
       <y>10</y>
       <width>91</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>5</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #2B5DD1;
+    color: #FFFFFF;
+    padding: 2px;
+    border-radius: 10px;
+}
+QPushButton:hover {
+    background-color: lightgreen;
+}</string>
     </property>
     <property name="text">
      <string>MENU AWAL</string>
@@ -54,34 +78,53 @@
      <rect>
       <x>50</x>
       <y>60</y>
-      <width>331</width>
+      <width>531</width>
       <height>131</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>6</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox{
+	background: #EDEEE9;
+	border: 1px solid #012A3B;
+}</string>
     </property>
     <property name="title">
      <string>Masukkan parameter - parameter di bawah ini:</string>
     </property>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>101</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>FREKUENSI CUT-OFF</string>
-     </property>
-    </widget>
     <widget class="QTextEdit" name="frekuensi_input">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>10</x>
        <y>30</y>
-       <width>131</width>
+       <width>141</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTextEdit{
+	border-radius: 12px;
+}
+
+QTextEdit:focus{
+	border: 1px solid #012A3B;
+}
+
+QTextEdit:hover{
+	border: 1px solid #012A3B;
+}</string>
      </property>
      <property name="tabChangesFocus">
       <bool>true</bool>
@@ -90,31 +133,41 @@
       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:6pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>240</x>
-       <y>20</y>
+       <x>150</x>
+       <y>30</y>
        <width>31</width>
        <height>31</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
      <property name="text">
-      <string>kHz</string>
+      <string>   Hz</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>70</y>
-       <width>101</width>
-       <height>51</height>
+       <y>60</y>
+       <width>151</width>
+       <height>21</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
      </property>
      <property name="text">
       <string>PANJANG KOEFISIEN</string>
@@ -123,11 +176,29 @@ p, li { white-space: pre-wrap; }
     <widget class="QTextEdit" name="koefisien_input">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>10</x>
        <y>80</y>
-       <width>131</width>
+       <width>141</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTextEdit{
+	border-radius: 12px;
+}
+
+QTextEdit:focus{
+	border: 1px solid #012A3B;
+}
+
+QTextEdit:hover{
+	border: 1px solid #012A3B;
+}</string>
      </property>
      <property name="tabChangesFocus">
       <bool>true</bool>
@@ -136,41 +207,375 @@ p, li { white-space: pre-wrap; }
       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:6pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
     <widget class="QPushButton" name="plotfir">
      <property name="geometry">
       <rect>
-       <x>255</x>
-       <y>96</y>
+       <x>450</x>
+       <y>90</y>
        <width>61</width>
        <height>31</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>7</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #2B5DD1;
+    color: #FFFFFF;
+    padding: 2px;
+    border-radius: 10px;
+}
+QPushButton:hover {
+    background-color: lightgreen;
+}</string>
+     </property>
      <property name="text">
       <string>Plot!</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>111</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>FREKUENSI CUT-OFF</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>10</y>
+       <width>131</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>SAMPLE RATE</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="sample_rate">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>30</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTextEdit{
+	border-radius: 12px;
+}
+
+QTextEdit:focus{
+	border: 1px solid #012A3B;
+}
+
+QTextEdit:hover{
+	border: 1px solid #012A3B;
+}</string>
+     </property>
+     <property name="tabChangesFocus">
+      <bool>true</bool>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:6pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>30</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>   Hz</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="lowpass">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>60</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Low Pass</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="highpass">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>80</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>High Pass</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="bandpass">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>100</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Band Pass</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="blackmann">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>60</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Blackmann</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="hamming">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>80</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Hamming</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="hanning">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>100</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Hanning</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="frekuensi_input_2">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>30</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTextEdit{
+	border-radius: 12px;
+}
+
+QTextEdit:focus{
+	border: 1px solid #012A3B;
+}
+
+QTextEdit:hover{
+	border: 1px solid #012A3B;
+}</string>
+     </property>
+     <property name="tabChangesFocus">
+      <bool>true</bool>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:6pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_13">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>30</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>   Hz</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>0</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>6</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>FREKUENSI CUT-OFF2</string>
      </property>
     </widget>
    </widget>
    <widget class="firplotet" name="firplotet" native="true">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>50</x>
       <y>200</y>
-      <width>721</width>
-      <height>301</height>
+      <width>681</width>
+      <height>241</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget{
+	background: #EDEEE9;
+}</string>
+    </property>
    </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>781</width>
+      <height>731</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	background:#012A3B;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="stepresponse" name="stepresponse" native="true">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>460</y>
+      <width>681</width>
+      <height>231</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget{
+	background: #EDEEE9;
+}</string>
+    </property>
+   </widget>
+   <zorder>label_2</zorder>
+   <zorder>label</zorder>
+   <zorder>back_button</zorder>
+   <zorder>groupBox</zorder>
+   <zorder>firplotet</zorder>
+   <zorder>stepresponse</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>776</width>
+     <width>785</width>
      <height>18</height>
     </rect>
    </property>
@@ -182,6 +587,12 @@ p, li { white-space: pre-wrap; }
    <class>firplotet</class>
    <extends>QWidget</extends>
    <header>firplotet.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>stepresponse</class>
+   <extends>QWidget</extends>
+   <header>stepresponse.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

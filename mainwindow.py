@@ -72,54 +72,95 @@ class Modul_1(QMainWindow):
         self.setWindowTitle("Modul 1 - Finite Response Impulse")
         self.plotfir.clicked.connect(self.plot_gambar_fir)
         self.back_button.clicked.connect(self.back_main_menu)
+        self.btngroup1 = QButtonGroup()
+        self.btngroup2 = QButtonGroup()
+
+        self.btngroup1.addButton(self.lowpass)
+        self.btngroup1.addButton(self.highpass)
+        self.btngroup1.addButton(self.bandpass)
+        self.btngroup2.addButton(self.blackmann)
+        self.btngroup2.addButton(self.hamming)
+        self.btngroup2.addButton(self.hanning)
+        self.lowpass.toggled.connect(lambda: self.filterstate(self.lowpass))
+        self.highpass.toggled.connect(lambda: self.filterstate(self.highpass))
+        self.bandpass.toggled.connect(lambda: self.filterstate(self.bandpass))
+
+        self.blackmann.toggled.connect(
+            lambda: self.methodstate(self.blackmann))
+        self.hamming.toggled.connect(lambda: self.methodstate(self.hamming))
+        self.hanning.toggled.connect(lambda: self.methodstate(self.hanning))
+
+    def filterstate(self, b):
+        if b.text() == "Low Pass":
+            if b.isChecked() == True:
+                self.filter = "lowpass"
+
+        if b.text() == "High Pass":
+            if b.isChecked() == True:
+                self.filter = "highpass"
+
+        if b.text() == "Band Pass":
+            if b.isChecked() == True:
+                self.filter = "bandpass"
+
+    def methodstate(self, b):
+        if b.text() == "Blackmann":
+            if b.isChecked() == True:
+                self.method = "blackman"
+
+        if b.text() == "Hamming":
+            if b.isChecked() == True:
+                self.method = "hanning"
+
+        if b.text() == "Hanning":
+            if b.isChecked() == True:
+                self.method = "hanning"
 
     def plot_gambar_fir(self):
-        nsamples = int(self.koefisien_input.toPlainText())
-        cutoff_hz = int(self.frekuensi_input.toPlainText())
-        sample_rate = 100.0
-        t = arange(nsamples) / sample_rate
-        x = np.cos(2*np.pi*0.5*t) + 0.2*np.sin(2*np.pi*2.5*t+0.1) + \
-                0.2*np.sin(2*np.pi*15.3*t) + 0.1*np.sin(2*np.pi*16.7*t + 0.1) + \
-                    0.1*np.sin(2*np.pi*23.45*t+.8)
-        # The Nyquist rate of the signal.
-        nyq_rate = sample_rate / 2.0
+        try:
+            nsamples = int(self.koefisien_input.toPlainText())
+            cutoff_hz = int(self.frekuensi_input.toPlainText())
+            cutoff_hz2 = 0
+            sample_rate = int(self.sample_rate.toPlainText())
+            if nsamples % 2 == 0:
+                nsamples = nsamples + 1
+            passzero = True
+            if self.filter == "highpass" or self.filter == "bandpass":
+                passzero = False
+            if self.filter == "bandpass":
+                cutoff_hz2 = int(self.frekuensi_input_2.toPlainText())
+                taps = firwin(nsamples, cutoff=[
+                              cutoff_hz/sample_rate, cutoff_hz2/sample_rate], window=self.method, pass_zero=passzero)
+            else:
+                taps = firwin(nsamples, cutoff=cutoff_hz/sample_rate,
+                              window=self.method, pass_zero=passzero)
+            w, h = freqz(taps, 1)
+            impulse = repeat(0., len(taps))
+            impulse[0] = 1.
+            x = arange(0, len(taps))
+            response = lfilter(taps, 1, impulse)
 
-        # The desired width of the transition from pass to stop,
-        # relative to the Nyquist rate.  We'll design the filter
-        # with a 5 Hz transition width.
-        width = 5.0/nyq_rate
+            self.firplotet.canvas.axes.clear()
+            self.firplotet.canvas.axes.plot(
+                w/max(w), 20*np.log10(np.absolute(h)))
+            self.firplotet.canvas.axes.set_xlabel("Normalized Frequncy")
+            self.firplotet.canvas.axes.set_ylabel("Magnitude (db)")
+            self.firplotet.canvas.axes.set_title("Frequency Response")
+            self.firplotet.canvas.axes.grid()
+            self.firplotet.canvas.figure.tight_layout()
+            self.firplotet.canvas.draw()
 
-        # The desired attenuation in the stop band, in dB.
-        ripple_db = 60.0
-
-        # Compute the order and Kaiser parameter for the FIR filter.
-        N, beta = kaiserord(ripple_db, width)
-
-        # Use firwin with a Kaiser window to create a lowpass FIR filter.
-        taps = firwin(N, cutoff_hz/nyq_rate, window=('kaiser', beta))
-
-        # Use lfilter to filter x with the FIR filter.
-        filtered_x = lfilter(taps, 1.0, x)
-        w, h = freqz(taps, worN=8000)
-        # samRate = 12000
-        # vector = np.vectorize(np.float)
-        # n = np.arange(0, koefisien, 1)
-        # hd = np.sinc(n-koefisien/2)-(freq/samRate) * \
-        #     np.sinc((n-koefisien/2)*(freq/samRate))
-        # wn = 0.42-0.5*math.cos(2*math.pi*vector(n)/koefisien) + \
-        #     0.08*math.cos(4*math.pi*vector(n)/koefisien)
-        # hn = hd*wn
-        # hn_fft = fft(hn, 1024)
-        # f = np.arange(0, samRate, samRate/(1024/2-1))
-
-        self.firplotet.canvas.axes.clear()
-        self.firplotet.canvas.axes.plot((w/np.pi)*nyq_rate, np.absolute(h))
-        self.firplotet.canvas.axes.set_xlabel("Frequncy")
-        self.firplotet.canvas.axes.set_ylabel("Magnitude")
-        self.firplotet.canvas.axes.set_title("Signal FIR")
-        self.firplotet.canvas.axes.grid()
-        self.firplotet.canvas.figure.tight_layout()
-        self.firplotet.canvas.draw()
+            self.stepresponse.canvas.axes.clear()
+            self.stepresponse.canvas.axes.plot(x, response)
+            self.stepresponse.canvas.axes.set_xlabel("Frequncy")
+            self.stepresponse.canvas.axes.set_ylabel(f'{nsamples} (sample)')
+            self.stepresponse.canvas.axes.set_title("Impulse Response")
+            self.stepresponse.canvas.axes.grid()
+            self.stepresponse.canvas.figure.tight_layout()
+            self.stepresponse.canvas.draw()
+        except Exception:
+            QMessageBox.about(self, "Error",
+                              Exception)
 
     def back_main_menu(self):
         self.CurrentWindow = Modul_modulpage()

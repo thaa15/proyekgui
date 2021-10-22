@@ -110,11 +110,11 @@ class Modul_1(QMainWindow):
 
         if b.text() == "Hamming":
             if b.isChecked() == True:
-                self.method = "hanning"
+                self.method = "hamming"
 
         if b.text() == "Hanning":
             if b.isChecked() == True:
-                self.method = "hanning"
+                self.method = "hann"
 
     def plot_gambar_fir(self):
         try:
@@ -159,8 +159,7 @@ class Modul_1(QMainWindow):
             self.stepresponse.canvas.figure.tight_layout()
             self.stepresponse.canvas.draw()
         except Exception:
-            QMessageBox.about(self, "Error",
-                              Exception)
+            QMessageBox.about(self, "Error","Isi semua input!")
 
     def back_main_menu(self):
         self.CurrentWindow = Modul_modulpage()

@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background: rgb(1, 42, 59);</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -48,9 +51,9 @@ color: rgb(161, 209, 210);
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>120</y>
+      <y>110</y>
       <width>201</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -123,7 +126,7 @@ color:rgb(237, 238, 233)
       <x>170</x>
       <y>160</y>
       <width>201</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -144,22 +147,6 @@ color:rgb(1, 42, 59);</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="background">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>561</width>
-      <height>421</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgb(1, 42, 59)</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
@@ -176,7 +163,6 @@ color:rgb(1, 42, 59);</string>
      <string/>
     </property>
    </widget>
-   <zorder>background</zorder>
    <zorder>label_2</zorder>
    <zorder>label</zorder>
    <zorder>nama_input</zorder>

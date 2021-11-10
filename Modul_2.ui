@@ -57,20 +57,20 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>80</y>
+      <y>76</y>
       <width>201</width>
-      <height>16</height>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>_________________________________</string>
+     <string>_____________________________________________</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="numerator">
     <property name="geometry">
      <rect>
       <x>150</x>
-      <y>70</y>
+      <y>60</y>
       <width>41</width>
       <height>20</height>
      </rect>
@@ -693,6 +693,19 @@ text-align: center;</string>
      <string/>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>0</y>
+      <width>56</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Menu</string>
+    </property>
+   </widget>
    <zorder>label_16</zorder>
    <zorder>label_12</zorder>
    <zorder>label_11</zorder>
@@ -738,6 +751,7 @@ text-align: center;</string>
    <zorder>cari_letak</zorder>
    <zorder>label_15</zorder>
    <zorder>kd</zorder>
+   <zorder>pushButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -745,7 +759,7 @@ text-align: center;</string>
      <x>0</x>
      <y>0</y>
      <width>626</width>
-     <height>22</height>
+     <height>18</height>
     </rect>
    </property>
   </widget>

@@ -243,12 +243,26 @@ class Ui_Modul_1(object):
 "    background: #EDEEE9;\n"
 "}")
         self.stepresponse.setObjectName("stepresponse")
+        self.nama_label = QtWidgets.QLabel(self.centralwidget)
+        self.nama_label.setGeometry(QtCore.QRect(10, 0, 161, 21))
+        self.nama_label.setStyleSheet("QLabel{\n"
+"    color: white;\n"
+"}")
+        self.nama_label.setObjectName("nama_label")
+        self.npm_label = QtWidgets.QLabel(self.centralwidget)
+        self.npm_label.setGeometry(QtCore.QRect(10, 20, 171, 21))
+        self.npm_label.setStyleSheet("QLabel{\n"
+"    color: white;\n"
+"}")
+        self.npm_label.setObjectName("npm_label")
         self.label_2.raise_()
         self.label.raise_()
         self.back_button.raise_()
         self.groupBox.raise_()
         self.firplotet.raise_()
         self.stepresponse.raise_()
+        self.nama_label.raise_()
+        self.npm_label.raise_()
         Modul_1.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(Modul_1)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 785, 18))
@@ -301,6 +315,8 @@ class Ui_Modul_1(object):
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><br /></p></body></html>"))
         self.label_13.setText(_translate("Modul_1", "   Hz"))
         self.label_14.setText(_translate("Modul_1", "FREKUENSI CUT-OFF2"))
+        self.nama_label.setText(_translate("Modul_1", "Nama:"))
+        self.npm_label.setText(_translate("Modul_1", "NPM: "))
 from firplotet import firplotet
 from stepresponse import stepresponse
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Login_Page.ui'
+# Form implementation generated from reading ui file 'Login_page.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -15,6 +15,7 @@ class Ui_LoginPage(object):
     def setupUi(self, LoginPage):
         LoginPage.setObjectName("LoginPage")
         LoginPage.resize(554, 417)
+        LoginPage.setStyleSheet("background: rgb(1, 42, 59);")
         self.centralwidget = QtWidgets.QWidget(LoginPage)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -32,7 +33,7 @@ class Ui_LoginPage(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.nama_input = QtWidgets.QTextEdit(self.centralwidget)
-        self.nama_input.setGeometry(QtCore.QRect(170, 120, 201, 31))
+        self.nama_input.setGeometry(QtCore.QRect(170, 110, 201, 41))
         font = QtGui.QFont()
         font.setFamily("Raleway")
         font.setPointSize(8)
@@ -61,7 +62,7 @@ class Ui_LoginPage(object):
 "")
         self.camera_button.setObjectName("camera_button")
         self.npm_input = QtWidgets.QTextEdit(self.centralwidget)
-        self.npm_input.setGeometry(QtCore.QRect(170, 160, 201, 31))
+        self.npm_input.setGeometry(QtCore.QRect(170, 160, 201, 41))
         font = QtGui.QFont()
         font.setFamily("Raleway")
         font.setPointSize(8)
@@ -74,17 +75,11 @@ class Ui_LoginPage(object):
 "color:rgb(1, 42, 59);")
         self.npm_input.setTabChangesFocus(True)
         self.npm_input.setObjectName("npm_input")
-        self.background = QtWidgets.QLabel(self.centralwidget)
-        self.background.setGeometry(QtCore.QRect(0, 0, 561, 421))
-        self.background.setStyleSheet("background-color:rgb(1, 42, 59)")
-        self.background.setText("")
-        self.background.setObjectName("background")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(130, 60, 281, 251))
         self.label_2.setStyleSheet("border: 2px solid rgb(161, 209, 210)")
         self.label_2.setText("")
         self.label_2.setObjectName("label_2")
-        self.background.raise_()
         self.label_2.raise_()
         self.label.raise_()
         self.nama_input.raise_()

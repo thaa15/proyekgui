@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background: #012A3B;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -27,7 +30,14 @@
      <font>
       <family>Segoe UI Historic</family>
       <pointsize>20</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	color: white;
+}</string>
     </property>
     <property name="text">
      <string>PILIH MODUL!</string>
@@ -44,6 +54,17 @@
       <width>91</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #2B5DD1;
+    color: #FFFFFF;
+    padding: 2px;
+    border-radius: 10px;
+}
+QPushButton:hover {
+    background-color: lightgreen;
+}</string>
     </property>
     <property name="text">
      <string>LOG OUT</string>
@@ -63,6 +84,17 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #2B5DD1;
+    color: #FFFFFF;
+    padding: 2px;
+    border-radius: 10px;
+}
+QPushButton:hover {
+    background-color: lightgreen;
+}</string>
+    </property>
     <property name="text">
      <string>MODUL 1</string>
     </property>
@@ -80,6 +112,17 @@
      <font>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #2B5DD1;
+    color: #FFFFFF;
+    padding: 2px;
+    border-radius: 10px;
+}
+QPushButton:hover {
+    background-color: lightgreen;
+}</string>
     </property>
     <property name="text">
      <string>MODUL 2</string>
@@ -99,6 +142,17 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #2B5DD1;
+    color: #FFFFFF;
+    padding: 2px;
+    border-radius: 10px;
+}
+QPushButton:hover {
+    background-color: lightgreen;
+}</string>
+    </property>
     <property name="text">
      <string>MODUL 3</string>
     </property>
@@ -116,6 +170,17 @@
      <font>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #2B5DD1;
+    color: #FFFFFF;
+    padding: 2px;
+    border-radius: 10px;
+}
+QPushButton:hover {
+    background-color: lightgreen;
+}</string>
     </property>
     <property name="text">
      <string>MODUL 4</string>
@@ -135,6 +200,17 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #2B5DD1;
+    color: #FFFFFF;
+    padding: 2px;
+    border-radius: 10px;
+}
+QPushButton:hover {
+    background-color: lightgreen;
+}</string>
+    </property>
     <property name="text">
      <string>MODUL 5</string>
     </property>
@@ -153,8 +229,55 @@
       <pointsize>12</pointsize>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #2B5DD1;
+    color: #FFFFFF;
+    padding: 2px;
+    border-radius: 10px;
+}
+QPushButton:hover {
+    background-color: lightgreen;
+}</string>
+    </property>
     <property name="text">
      <string>MODUL 6</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="nama_label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string>Nama</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="npm_label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>171</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	color: white;
+}</string>
+    </property>
+    <property name="text">
+     <string>NPM</string>
     </property>
    </widget>
   </widget>

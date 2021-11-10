@@ -15,6 +15,7 @@ class Ui_Modul_modulpage(object):
     def setupUi(self, Modul_modulpage):
         Modul_modulpage.setObjectName("Modul_modulpage")
         Modul_modulpage.resize(776, 547)
+        Modul_modulpage.setStyleSheet("background: #012A3B;")
         self.centralwidget = QtWidgets.QWidget(Modul_modulpage)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -22,48 +23,128 @@ class Ui_Modul_modulpage(object):
         font = QtGui.QFont()
         font.setFamily("Segoe UI Historic")
         font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
         self.label.setFont(font)
+        self.label.setStyleSheet("QLabel{\n"
+"    color: white;\n"
+"}")
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.logout_button = QtWidgets.QPushButton(self.centralwidget)
         self.logout_button.setGeometry(QtCore.QRect(640, 10, 91, 31))
+        self.logout_button.setStyleSheet("QPushButton {\n"
+"    background-color: #2B5DD1;\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: lightgreen;\n"
+"}")
         self.logout_button.setObjectName("logout_button")
         self.modul_1_button = QtWidgets.QPushButton(self.centralwidget)
         self.modul_1_button.setGeometry(QtCore.QRect(130, 140, 251, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.modul_1_button.setFont(font)
+        self.modul_1_button.setStyleSheet("QPushButton {\n"
+"    background-color: #2B5DD1;\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: lightgreen;\n"
+"}")
         self.modul_1_button.setObjectName("modul_1_button")
         self.modul_2_button = QtWidgets.QPushButton(self.centralwidget)
         self.modul_2_button.setGeometry(QtCore.QRect(410, 140, 251, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.modul_2_button.setFont(font)
+        self.modul_2_button.setStyleSheet("QPushButton {\n"
+"    background-color: #2B5DD1;\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: lightgreen;\n"
+"}")
         self.modul_2_button.setObjectName("modul_2_button")
         self.modul_3_button = QtWidgets.QPushButton(self.centralwidget)
         self.modul_3_button.setGeometry(QtCore.QRect(130, 210, 251, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.modul_3_button.setFont(font)
+        self.modul_3_button.setStyleSheet("QPushButton {\n"
+"    background-color: #2B5DD1;\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: lightgreen;\n"
+"}")
         self.modul_3_button.setObjectName("modul_3_button")
         self.modul_4_button = QtWidgets.QPushButton(self.centralwidget)
         self.modul_4_button.setGeometry(QtCore.QRect(410, 210, 251, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.modul_4_button.setFont(font)
+        self.modul_4_button.setStyleSheet("QPushButton {\n"
+"    background-color: #2B5DD1;\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: lightgreen;\n"
+"}")
         self.modul_4_button.setObjectName("modul_4_button")
         self.modul_5_button = QtWidgets.QPushButton(self.centralwidget)
         self.modul_5_button.setGeometry(QtCore.QRect(130, 280, 251, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.modul_5_button.setFont(font)
+        self.modul_5_button.setStyleSheet("QPushButton {\n"
+"    background-color: #2B5DD1;\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: lightgreen;\n"
+"}")
         self.modul_5_button.setObjectName("modul_5_button")
         self.modul_6_button = QtWidgets.QPushButton(self.centralwidget)
         self.modul_6_button.setGeometry(QtCore.QRect(410, 280, 251, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.modul_6_button.setFont(font)
+        self.modul_6_button.setStyleSheet("QPushButton {\n"
+"    background-color: #2B5DD1;\n"
+"    color: #FFFFFF;\n"
+"    padding: 2px;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"    background-color: lightgreen;\n"
+"}")
         self.modul_6_button.setObjectName("modul_6_button")
+        self.nama_label = QtWidgets.QLabel(self.centralwidget)
+        self.nama_label.setGeometry(QtCore.QRect(10, 0, 161, 21))
+        self.nama_label.setStyleSheet("QLabel{\n"
+"    color: white;\n"
+"}")
+        self.nama_label.setObjectName("nama_label")
+        self.npm_label = QtWidgets.QLabel(self.centralwidget)
+        self.npm_label.setGeometry(QtCore.QRect(10, 20, 171, 21))
+        self.npm_label.setStyleSheet("QLabel{\n"
+"    color: white;\n"
+"}")
+        self.npm_label.setObjectName("npm_label")
         Modul_modulpage.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(Modul_modulpage)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 776, 18))
@@ -87,6 +168,8 @@ class Ui_Modul_modulpage(object):
         self.modul_4_button.setText(_translate("Modul_modulpage", "MODUL 4"))
         self.modul_5_button.setText(_translate("Modul_modulpage", "MODUL 5"))
         self.modul_6_button.setText(_translate("Modul_modulpage", "MODUL 6"))
+        self.nama_label.setText(_translate("Modul_modulpage", "Nama"))
+        self.npm_label.setText(_translate("Modul_modulpage", "NPM"))
 
 
 if __name__ == "__main__":

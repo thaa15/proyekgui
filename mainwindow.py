@@ -10,7 +10,7 @@ from pylab import *
 from scipy.signal import lfilter, firwin, freqz
 import cv2
 import pytesseract
-#from flask import Flask
+import requests
 #import gambar_rc
 pytesseract.pytesseract.tesseract_cmd = r'C:\\Users\\abang\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe'
 
@@ -45,6 +45,10 @@ class LoginPage(QMainWindow):
             self.msg.setWindowTitle("Berhasil Masuk!")
             self.msg.buttonClicked.connect(self.nextpage_pressed)
             self.msg.show()
+            payload = {'name':self.nama, 'npm': self.npm}
+            r = requests.post('https://gui-kel-1.herokuapp.com/profiles', json=payload)
+            self.token = r.json()['data']['profilesId']
+            print(self.token, type(self.token))
         except Exception:
             if len(self.nama) == 0:
                 QMessageBox.about(self, "Eror Kosong Text",
@@ -59,7 +63,7 @@ class LoginPage(QMainWindow):
         self.close()
 
     def nextpage_pressed(self):
-        self.CurrentWindow = Modul_modulpage(self.nama, self.npm)
+        self.CurrentWindow = Modul_modulpage(self.nama, self.npm, self.token)
         self.CurrentWindow.show()
         self.close()
 
@@ -119,9 +123,10 @@ class Camera(QThread):
 
 
 class Modul_modulpage(QMainWindow):
-    def __init__(self, nama, npm):
+    def __init__(self, nama, npm, token):
         self.nama = nama
         self.npm = npm
+        self.token = token
         QMainWindow.__init__(self)
         loadUi("Modul_modulpage.ui", self)
         self.setWindowTitle("Pilih Modul")
@@ -133,30 +138,32 @@ class Modul_modulpage(QMainWindow):
         self.npm_label.setText(f'NPM: {self.npm}')
 
     def modul_1Page(self):
-        self.CurrentWindow = Modul_1(self.nama, self.npm)
+        self.CurrentWindow = Modul_1(self.nama, self.npm, self.token)
         self.CurrentWindow.show()
         self.close()
 
     def modul_2Page(self):
-        self.CurrentWindow = Modul_2(self.nama, self.npm)
+        self.CurrentWindow = Modul_2(self.nama, self.npm, self.token)
         self.CurrentWindow.show()
         self.close()
 
     def modul_6Page(self):
-        self.CurrentWindow = Modul_6(self.nama, self.npm)
+        self.CurrentWindow = Modul_6(self.nama, self.npm, self.token)
         self.CurrentWindow.show()
         self.close()
 
     def logoutPage(self):
+        requests.delete(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
         self.CurrentWindow = LoginPage()
         self.CurrentWindow.show()
         self.close()
 
 
 class Modul_1(QMainWindow):
-    def __init__(self, nama, npm):
+    def __init__(self, nama, npm, token):
         self.nama = nama
         self.npm = npm
+        self.token = token
         QMainWindow.__init__(self)
         loadUi("Modul_1.ui", self)
         self.setWindowTitle("Modul 1 - Finite Response Impulse")
@@ -254,15 +261,16 @@ class Modul_1(QMainWindow):
             QMessageBox.about(self, "Error", "Isi semua input!")
 
     def back_main_menu(self):
-        self.CurrentWindow = Modul_modulpage(self.nama, self.npm)
+        self.CurrentWindow = Modul_modulpage(self.nama, self.npm, self.token)
         self.CurrentWindow.show()
         self.close()
 
 
 class Modul_2(QMainWindow):
-    def __init__(self, nama, npm):
+    def __init__(self, nama, npm, token):
         self.nama = nama
         self.npm = npm
+        self.token = token
         QMainWindow.__init__(self)
         loadUi("Modul_2.ui", self)
         self.setWindowTitle("Modul 2 - Root Locus")
@@ -355,15 +363,16 @@ class Modul_2(QMainWindow):
             QMessageBox.about(self, "Error", "Isi semua input!")
 
     def back_main_menu(self):
-        self.CurrentWindow = Modul_modulpage(self.nama, self.npm)
+        self.CurrentWindow = Modul_modulpage(self.nama, self.npm, self.token)
         self.CurrentWindow.show()
         self.close()
 
 
 class Modul_6(QMainWindow):
-    def __init__(self, nama, npm):
+    def __init__(self, nama, npm, token):
         self.nama = nama
         self.npm = npm
+        self.token = token
         QMainWindow.__init__(self)
         loadUi("Modul_6.ui", self)
         self.setWindowTitle("Modul 6 (Kalkulator) - Regresi dan Klasifikasi")
@@ -506,7 +515,7 @@ class Modul_6(QMainWindow):
             QMessageBox.about(self, "Error", "Bukan Nilai!")
 
     def back_main_menu(self):
-        self.CurrentWindow = Modul_modulpage(self.nama, self.npm)
+        self.CurrentWindow = Modul_modulpage(self.nama, self.npm, self.token)
         self.CurrentWindow.show()
         self.close()
 

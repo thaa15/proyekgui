@@ -20,7 +20,7 @@ class LoginPage(QMainWindow):
         QMainWindow.__init__(self)
         loadUi("Login_Page.ui", self)
         self.setWindowTitle("Login Page")
-
+        self.token = "null"
         self.signin_button.clicked.connect(self.tombol_login)
         self.camera_button.clicked.connect(self.open_camera)
         self.npm_input.setPlaceholderText("Masukkan NPM Anda!")
@@ -48,7 +48,6 @@ class LoginPage(QMainWindow):
             payload = {'name':self.nama, 'npm': self.npm, 'activity' : 'Main Menu'}
             r = requests.post('https://gui-kel-1.herokuapp.com/profiles', json=payload)
             self.token = r.json()['data']['profilesId']
-            print(self.token, type(self.token))
         except Exception:
             if len(self.nama) == 0:
                 QMessageBox.about(self, "Eror Kosong Text",
@@ -56,7 +55,6 @@ class LoginPage(QMainWindow):
             else:
                 QMessageBox.about(self, "Eror Input Bukan NPM",
                                   "Masukkan NPM dengan Benar!")
-
     def open_camera(self):
         self.CurrentWindow = CameraOpen()
         self.CurrentWindow.show()
@@ -136,18 +134,22 @@ class Modul_modulpage(QMainWindow):
         self.logout_button.clicked.connect(self.logoutPage)
         self.nama_label.setText(f'Nama: {self.nama}')
         self.npm_label.setText(f'NPM: {self.npm}')
+        app.aboutToQuit.connect(self.closeEvent)
+        self.force_close = True
 
     def modul_1Page(self):
         payload = {'activity' : 'Modul 1'}
         requests.put(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
         self.CurrentWindow = Modul_1(self.nama, self.npm, self.token)
         self.CurrentWindow.show()
+        self.force_close = False
         self.close()
 
     def modul_2Page(self):
         payload = {'activity' : 'Modul 2'}
         requests.put(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
         self.CurrentWindow = Modul_2(self.nama, self.npm, self.token)
+        self.force_close = False
         self.CurrentWindow.show()
         self.close()
 
@@ -155,6 +157,7 @@ class Modul_modulpage(QMainWindow):
         payload = {'activity' : 'Modul 6'}
         requests.put(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
         self.CurrentWindow = Modul_6(self.nama, self.npm, self.token)
+        self.force_close = False
         self.CurrentWindow.show()
         self.close()
 
@@ -163,6 +166,10 @@ class Modul_modulpage(QMainWindow):
         self.CurrentWindow = LoginPage()
         self.CurrentWindow.show()
         self.close()
+    def closeEvent(self, event):
+        if self.force_close is True:
+            requests.delete(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
+            sys.exit(0)
 
 
 class Modul_1(QMainWindow):
@@ -177,6 +184,8 @@ class Modul_1(QMainWindow):
         self.back_button.clicked.connect(self.back_main_menu)
         self.nama_label.setText(f'Nama: {self.nama}')
         self.npm_label.setText(f'NPM: {self.npm}')
+        app.aboutToQuit.connect(self.closeEvent)
+        self.force_close = True
         self.btngroup1 = QButtonGroup()
         self.btngroup2 = QButtonGroup()
 
@@ -270,8 +279,14 @@ class Modul_1(QMainWindow):
         payload = {'activity' : 'Main Menu'}
         requests.put(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
         self.CurrentWindow = Modul_modulpage(self.nama, self.npm, self.token)
+        self.force_close = False
         self.CurrentWindow.show()
         self.close()
+
+    def closeEvent(self, event):
+        if self.force_close is True:
+            requests.delete(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
+            sys.exit(0)
 
 
 class Modul_2(QMainWindow):
@@ -287,6 +302,8 @@ class Modul_2(QMainWindow):
         self.cari_letak.clicked.connect(self.letak)
         self.hitung_ki.clicked.connect(self.hitungKI)
         self.pushButton.clicked.connect(self.back_main_menu)
+        app.aboutToQuit.connect(self.closeEvent)
+        self.force_close = True
 
     def hitung(self):
         try:
@@ -387,8 +404,14 @@ class Modul_2(QMainWindow):
         payload = {'activity' : 'Main Menu'}
         requests.put(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
         self.CurrentWindow = Modul_modulpage(self.nama, self.npm, self.token)
+        self.force_close = False
         self.CurrentWindow.show()
         self.close()
+
+    def closeEvent(self, event):
+        if self.force_close is True:
+            requests.delete(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
+            sys.exit(0)
 
 
 class Modul_6(QMainWindow):
@@ -406,6 +429,8 @@ class Modul_6(QMainWindow):
         self.tabWidget.setTabText(1, "KNN")
         self.predict_button.clicked.connect(self.predicted_value)
         self.plotGraph.clicked.connect(self.plotgrap)
+        app.aboutToQuit.connect(self.closeEvent)
+        self.force_close = True
         self.btngroup1 = QButtonGroup()
         self.btngroup2 = QButtonGroup()
         self.btngroup1.addButton(self.W_norm)
@@ -541,8 +566,14 @@ class Modul_6(QMainWindow):
         payload = {'activity' : 'Main Menu'}
         requests.put(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
         self.CurrentWindow = Modul_modulpage(self.nama, self.npm, self.token)
+        self.force_close = False
         self.CurrentWindow.show()
         self.close()
+
+    def closeEvent(self, event):
+        if self.force_close is True:
+            requests.delete(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
+            sys.exit(0)
 
 
 app = QApplication([])

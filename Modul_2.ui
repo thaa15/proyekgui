@@ -460,11 +460,22 @@ color: rgb(237, 238, 233)</string>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>0</y>
-      <width>56</width>
-      <height>17</height>
+      <x>510</x>
+      <y>10</y>
+      <width>71</width>
+      <height>21</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #2B5DD1;
+    color: #FFFFFF;
+    padding: 2px;
+    border-radius: 10px;
+}
+QPushButton:hover {
+    background-color: lightgreen;
+}</string>
     </property>
     <property name="text">
      <string>Menu</string>
@@ -602,29 +613,18 @@ background-color: rgb(161, 209, 210)</string>
      <string>Calculate</string>
     </property>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="widget_2" native="true">
     <property name="geometry">
      <rect>
       <x>360</x>
       <y>130</y>
-      <width>211</width>
+      <width>221</width>
       <height>41</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="1">
       <widget class="QLabel" name="x">
-       <property name="styleSheet">
-        <string notr="true">font-size: 7pt;
-color: rgb(237, 238, 233)</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="3">
-      <widget class="QLabel" name="gpd">
        <property name="styleSheet">
         <string notr="true">font-size: 7pt;
 color: rgb(237, 238, 233)</string>
@@ -642,6 +642,28 @@ color: rgb(237, 238, 233)</string>
        </property>
        <property name="text">
         <string>Gpd (s) =</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_15">
+       <property name="styleSheet">
+        <string notr="true">font-size: 7pt;
+color: rgb(237, 238, 233)</string>
+       </property>
+       <property name="text">
+        <string>KD = </string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLabel" name="gpd">
+       <property name="styleSheet">
+        <string notr="true">font-size: 7pt;
+color: rgb(237, 238, 233)</string>
+       </property>
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </item>
@@ -667,29 +689,27 @@ color: rgb(237, 238, 233)</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_15">
-       <property name="styleSheet">
-        <string notr="true">font-size: 7pt;
-color: rgb(237, 238, 233)</string>
-       </property>
-       <property name="text">
-        <string>KD = </string>
-       </property>
-      </widget>
-     </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="widget_1" native="true">
     <property name="geometry">
      <rect>
       <x>330</x>
       <y>40</y>
-      <width>259</width>
-      <height>70</height>
+      <width>271</width>
+      <height>71</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout_2">
+    <layout class="QGridLayout" name="gridLayouts">
+     <property name="topMargin">
+      <number>1</number>
+     </property>
+     <property name="rightMargin">
+      <number>1</number>
+     </property>
+     <property name="spacing">
+      <number>3</number>
+     </property>
      <item row="1" column="0">
       <widget class="QLabel" name="label_7">
        <property name="styleSheet">
@@ -755,32 +775,23 @@ background-color: rgb(161, 209, 210)</string>
       </widget>
      </item>
     </layout>
+    <zorder>plant_awal_2</zorder>
+    <zorder>teta_3</zorder>
+    <zorder>cari_letak</zorder>
+    <zorder>label_10</zorder>
+    <zorder>label_9</zorder>
+    <zorder>label_7</zorder>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="widget_4" native="true">
     <property name="geometry">
      <rect>
       <x>20</x>
       <y>150</y>
       <width>281</width>
-      <height>25</height>
+      <height>27</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout_3" columnstretch="0,0,0,0,0,0,0">
-     <item row="0" column="3">
-      <widget class="QLabel" name="ts">
-       <property name="font">
-        <font>
-         <pointsize>7</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(237, 238, 233)</string>
-       </property>
-       <property name="text">
-        <string>   Ts =</string>
-       </property>
-      </widget>
-     </item>
+    <layout class="QGridLayout" name="gridLayoutz" columnstretch="0,0,0,0,0,0,0">
      <item row="0" column="6">
       <widget class="QPushButton" name="calculate">
        <property name="font">
@@ -796,10 +807,18 @@ background-color: rgb(161, 209, 210)</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="4">
-      <widget class="QLineEdit" name="sampling_time">
+     <item row="0" column="3">
+      <widget class="QLabel" name="ts">
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true">font-size: 7pt</string>
+        <string notr="true">color: rgb(237, 238, 233)</string>
+       </property>
+       <property name="text">
+        <string>   Ts =</string>
        </property>
       </widget>
      </item>
@@ -818,6 +837,13 @@ background-color: rgb(161, 209, 210)</string>
        </property>
       </widget>
      </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="persen_os">
+       <property name="styleSheet">
+        <string notr="true">font-size: 7pt</string>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="2">
       <widget class="QLabel" name="label_6">
        <property name="font">
@@ -833,8 +859,8 @@ background-color: rgb(161, 209, 210)</string>
        </property>
       </widget>
      </item>
-     <item row="0" column="1">
-      <widget class="QLineEdit" name="persen_os">
+     <item row="0" column="4">
+      <widget class="QLineEdit" name="sampling_time">
        <property name="styleSheet">
         <string notr="true">font-size: 7pt</string>
        </property>
@@ -857,7 +883,7 @@ background-color: rgb(161, 209, 210)</string>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="widget_3" native="true">
     <property name="geometry">
      <rect>
       <x>406</x>
@@ -932,10 +958,10 @@ color: rgb(237, 238, 233)</string>
    <zorder>label_22</zorder>
    <zorder>label_12</zorder>
    <zorder>label_16</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
+   <zorder>widget_2</zorder>
+   <zorder>widget_1</zorder>
+   <zorder>widget_4</zorder>
+   <zorder>widget_3</zorder>
    <zorder>label_17</zorder>
    <zorder>label_18</zorder>
    <zorder>modul_rootlocus</zorder>
@@ -974,7 +1000,7 @@ color: rgb(237, 238, 233)</string>
      <x>0</x>
      <y>0</y>
      <width>626</width>
-     <height>22</height>
+     <height>18</height>
     </rect>
    </property>
   </widget>

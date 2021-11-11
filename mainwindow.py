@@ -285,6 +285,7 @@ class Modul_2(QMainWindow):
         self.calculate.clicked.connect(self.hitung)
         self.plot_akar.clicked.connect(self.plot)
         self.cari_letak.clicked.connect(self.letak)
+        self.hitung_ki.clicked.connect(self.hitungKI)
         self.pushButton.clicked.connect(self.back_main_menu)
 
     def hitung(self):
@@ -358,6 +359,7 @@ class Modul_2(QMainWindow):
             self.gpd.setText(gpd_hasil)
 
             # KD
+            global kd_hasil
 
             gs = 1/(denum1*(s_hs[0]**2)+denum2*s_hs[0]+denum3)
             gpd = (s_hs[0]-(x))
@@ -369,6 +371,17 @@ class Modul_2(QMainWindow):
             self.kd.setText(kd)
         except Exception:
             QMessageBox.about(self, "Error", "Isi semua input!")
+    
+    def hitungKI(self):
+        
+        zero_gpi = float(self.zero_gpi.text())
+        gpi = (s_hs[0]+zero_gpi)/(s_hs[0])
+        ki_hasil = kd_hasil*(1/gpi)
+        ki = abs(ki_hasil)
+
+        ki = str(round(ki,2))
+        self.ki.setText(ki)
+
 
     def back_main_menu(self):
         payload = {'activity' : 'Main Menu'}

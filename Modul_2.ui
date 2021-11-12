@@ -901,29 +901,39 @@ background-color: rgb(161, 209, 210)</string>
       <height>21</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QLabel" name="label_19">
-       <property name="styleSheet">
-        <string notr="true">font-size: 7pt;
+    <widget class="QLabel" name="label_19">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>9</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 7pt;
 color: rgb(237, 238, 233)</string>
-       </property>
-       <property name="text">
-        <string>s +</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="zero_gpi">
-       <property name="styleSheet">
-        <string notr="true">font-size: 7pt</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-    </layout>
+     </property>
+     <property name="text">
+      <string>s +</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="zero_gpi">
+     <property name="geometry">
+      <rect>
+       <x>29</x>
+       <y>9</y>
+       <width>33</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 7pt</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
    <widget class="QLabel" name="label_17">
     <property name="geometry">
@@ -963,6 +973,7 @@ color: rgb(237, 238, 233)</string>
     </property>
    </widget>
    <zorder>label_23</zorder>
+   <zorder>label_18</zorder>
    <zorder>label_11</zorder>
    <zorder>label_22</zorder>
    <zorder>label_12</zorder>
@@ -972,7 +983,6 @@ color: rgb(237, 238, 233)</string>
    <zorder>widget_4</zorder>
    <zorder>widget_3</zorder>
    <zorder>label_17</zorder>
-   <zorder>label_18</zorder>
    <zorder>modul_rootlocus</zorder>
    <zorder>plant_awal</zorder>
    <zorder>label_3</zorder>
@@ -1009,7 +1019,7 @@ color: rgb(237, 238, 233)</string>
      <x>0</x>
      <y>0</y>
      <width>787</width>
-     <height>18</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

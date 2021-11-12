@@ -110,7 +110,7 @@
         </font>
        </property>
        <property name="text">
-        <string>22</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -122,7 +122,7 @@
         </font>
        </property>
        <property name="text">
-        <string>0.18</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -149,7 +149,7 @@
         </font>
        </property>
        <property name="text">
-        <string>31</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -161,7 +161,7 @@
         </font>
        </property>
        <property name="text">
-        <string>0.3</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -188,7 +188,7 @@
         </font>
        </property>
        <property name="text">
-        <string>42</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -200,7 +200,7 @@
         </font>
        </property>
        <property name="text">
-        <string>0.18</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -227,7 +227,7 @@
         </font>
        </property>
        <property name="text">
-        <string>50</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -239,7 +239,7 @@
         </font>
        </property>
        <property name="text">
-        <string>0.3</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -266,7 +266,7 @@
         </font>
        </property>
        <property name="text">
-        <string>58</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -278,7 +278,7 @@
         </font>
        </property>
        <property name="text">
-        <string>0.18</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -380,7 +380,7 @@
         </font>
        </property>
        <property name="text">
-        <string>21</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -392,7 +392,7 @@
         </font>
        </property>
        <property name="text">
-        <string>0.1</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -419,7 +419,7 @@
         </font>
        </property>
        <property name="text">
-        <string>31</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -431,7 +431,7 @@
         </font>
        </property>
        <property name="text">
-        <string>0.25</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -458,7 +458,7 @@
         </font>
        </property>
        <property name="text">
-        <string>39</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -470,7 +470,7 @@
         </font>
        </property>
        <property name="text">
-        <string>0.1</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -497,7 +497,7 @@
         </font>
        </property>
        <property name="text">
-        <string>50</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -509,7 +509,7 @@
         </font>
        </property>
        <property name="text">
-        <string>0.25</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -536,7 +536,7 @@
         </font>
        </property>
        <property name="text">
-        <string>57</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -548,7 +548,7 @@
         </font>
        </property>
        <property name="text">
-        <string>0.1</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1371,7 +1371,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>18</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1383,7 +1383,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>0.1</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1410,7 +1410,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>30</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1422,7 +1422,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>0.25</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1449,7 +1449,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>37</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1461,7 +1461,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>0.1</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1488,7 +1488,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>48</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1500,7 +1500,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>0.25</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1527,7 +1527,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>55</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1539,7 +1539,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>0.1</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1725,7 +1725,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>8</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1737,7 +1737,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>0.01</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1764,7 +1764,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>18</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1776,7 +1776,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>0.5</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1803,7 +1803,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>25</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1815,7 +1815,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>0.01</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1842,7 +1842,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>36</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1854,7 +1854,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>0.5</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1881,7 +1881,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>43</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -1893,7 +1893,7 @@ color: rgb(1, 42, 59)</string>
         </font>
        </property>
        <property name="text">
-        <string>0.01</string>
+        <string/>
        </property>
       </widget>
      </item>

@@ -165,6 +165,7 @@ class Modul_modulpage(QMainWindow):
         requests.delete(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
         self.CurrentWindow = LoginPage()
         self.CurrentWindow.show()
+        self.force_close = False
         self.close()
     def closeEvent(self, event):
         if self.force_close is True:
@@ -510,6 +511,8 @@ class Modul_6(QMainWindow):
             else:
                 nilai_y_list = [1/y for y in nilai_y_list]
 
+            if len(nilai_w_list) != len(nilai_y_list): 
+                raise Exception('Panjang Data Fitur dan Label harus sama!')
             sum_of_xy = 0
             sum_of_x = 0
             sum_of_y = 0
@@ -546,7 +549,10 @@ class Modul_6(QMainWindow):
             ax.plot(x, y, color='red')
             plt.show()
         except Exception:
-            QMessageBox.about(self, "Error", "Isi semua input dengan benar!")
+            if len(nilai_w_list) != len(nilai_y_list):
+                QMessageBox.about(self, "Error", 'Panjang Data Fitur dan Label harus sama!')
+            else:
+                QMessageBox.about(self, "Error", "Isi semua input dengan benar!")
 
     def predicted_value(self):
         try:
@@ -560,6 +566,8 @@ class Modul_6(QMainWindow):
                 y_prediksi = 10**(y_prediksi)
             self.hasil_predik.setText(f'{"{:.2f}".format(y_prediksi)}')
         except Exception:
+            QMessageBox.about(self, "Error", "Isi semua input!")
+        except ValueError:
             QMessageBox.about(self, "Error", "Bukan Nilai!")
 
     def back_main_menu(self):

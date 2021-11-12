@@ -14,7 +14,8 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background: #012A3B;</string>
+   <string notr="true">background: #012A3B;
+color: white;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="back_button">
@@ -89,6 +90,7 @@ QPushButton:hover {
     <property name="styleSheet">
      <string notr="true">QWidget{
 	background-color: #73B6BC;
+color: black;
 }</string>
     </property>
     <property name="currentIndex">
@@ -325,7 +327,8 @@ color: white;
       </property>
       <property name="styleSheet">
        <string notr="true">QTextEdit{
-background: white;
+background:white;
+color:black;
 }</string>
       </property>
      </widget>
@@ -356,6 +359,7 @@ background: white;
       </property>
       <property name="styleSheet">
        <string notr="true">QTextEdit{
+color: black;
 background: white;
 }</string>
       </property>
@@ -476,7 +480,8 @@ color: white;</string>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background: white;</string>
+        <string notr="true">background: white;
+color: black;</string>
        </property>
       </widget>
       <widget class="QPushButton" name="predict_button">

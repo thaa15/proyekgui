@@ -15,7 +15,8 @@ class Ui_Modul_modulpage(object):
     def setupUi(self, Modul_modulpage):
         Modul_modulpage.setObjectName("Modul_modulpage")
         Modul_modulpage.resize(631, 453)
-        Modul_modulpage.setStyleSheet("background: #012A3B;")
+        Modul_modulpage.setStyleSheet("background: #012A3B;\n"
+"color: white;")
         self.centralwidget = QtWidgets.QWidget(Modul_modulpage)
         self.centralwidget.setObjectName("centralwidget")
         self.back_button = QtWidgets.QPushButton(self.centralwidget)
@@ -46,6 +47,7 @@ class Ui_Modul_modulpage(object):
         self.tabWidget.setGeometry(QtCore.QRect(0, 50, 641, 471))
         self.tabWidget.setStyleSheet("QWidget{\n"
 "    background-color: #73B6BC;\n"
+"color: black;\n"
 "}")
         self.tabWidget.setObjectName("tabWidget")
         self.tab = QtWidgets.QWidget()
@@ -125,7 +127,8 @@ class Ui_Modul_modulpage(object):
         self.nilai_W = QtWidgets.QTextEdit(self.tab)
         self.nilai_W.setGeometry(QtCore.QRect(180, 20, 104, 211))
         self.nilai_W.setStyleSheet("QTextEdit{\n"
-"background: white;\n"
+"background:white;\n"
+"color:black;\n"
 "}")
         self.nilai_W.setObjectName("nilai_W")
         self.label_6 = QtWidgets.QLabel(self.tab)
@@ -135,6 +138,7 @@ class Ui_Modul_modulpage(object):
         self.nilai_Y = QtWidgets.QTextEdit(self.tab)
         self.nilai_Y.setGeometry(QtCore.QRect(300, 20, 104, 211))
         self.nilai_Y.setStyleSheet("QTextEdit{\n"
+"color: black;\n"
 "background: white;\n"
 "}")
         self.nilai_Y.setObjectName("nilai_Y")
@@ -183,7 +187,8 @@ class Ui_Modul_modulpage(object):
         self.label_3.setObjectName("label_3")
         self.prediksi = QtWidgets.QTextEdit(self.groupBox_2)
         self.prediksi.setGeometry(QtCore.QRect(10, 30, 191, 31))
-        self.prediksi.setStyleSheet("background: white;")
+        self.prediksi.setStyleSheet("background: white;\n"
+"color: black;")
         self.prediksi.setObjectName("prediksi")
         self.predict_button = QtWidgets.QPushButton(self.groupBox_2)
         self.predict_button.setGeometry(QtCore.QRect(70, 70, 71, 21))

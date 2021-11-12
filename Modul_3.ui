@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>702</width>
-    <height>410</height>
+    <width>1000</width>
+    <height>532</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,13 +17,16 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>190</y>
-      <width>129</width>
-      <height>155</height>
+      <x>40</x>
+      <y>270</y>
+      <width>151</width>
+      <height>181</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_4">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
      <item row="0" column="0" colspan="3">
       <widget class="QLabel" name="label_4">
        <property name="font">
@@ -284,13 +287,16 @@
    <widget class="QWidget" name="layoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>190</y>
-      <width>129</width>
-      <height>155</height>
+      <x>260</x>
+      <y>270</y>
+      <width>161</width>
+      <height>181</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_5">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
      <item row="0" column="0" colspan="3">
       <widget class="QLabel" name="label_5">
        <property name="font">
@@ -551,10 +557,10 @@
    <widget class="QPushButton" name="calculate">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>280</y>
-      <width>71</width>
-      <height>21</height>
+      <x>720</x>
+      <y>430</y>
+      <width>101</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -569,10 +575,10 @@
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>60</y>
-      <width>111</width>
-      <height>16</height>
+      <x>480</x>
+      <y>80</y>
+      <width>141</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -587,10 +593,10 @@
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>60</y>
-      <width>111</width>
-      <height>16</height>
+      <x>630</x>
+      <y>80</y>
+      <width>121</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -605,10 +611,10 @@
    <widget class="QWidget" name="layoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>80</y>
-      <width>111</width>
-      <height>47</height>
+      <x>630</x>
+      <y>120</y>
+      <width>141</width>
+      <height>91</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_7">
@@ -689,10 +695,10 @@
    <widget class="QLabel" name="label_14">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>60</y>
-      <width>111</width>
-      <height>16</height>
+      <x>800</x>
+      <y>70</y>
+      <width>151</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -707,10 +713,10 @@
    <widget class="QWidget" name="layoutWidget_4">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>80</y>
-      <width>111</width>
-      <height>47</height>
+      <x>800</x>
+      <y>120</y>
+      <width>161</width>
+      <height>91</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_8">
@@ -791,10 +797,10 @@
    <widget class="QLabel" name="label_18">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>150</y>
-      <width>111</width>
-      <height>16</height>
+      <x>480</x>
+      <y>230</y>
+      <width>121</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -809,10 +815,10 @@
    <widget class="QWidget" name="layoutWidget_5">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>170</y>
-      <width>111</width>
-      <height>47</height>
+      <x>480</x>
+      <y>270</y>
+      <width>131</width>
+      <height>81</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_9">
@@ -893,10 +899,10 @@
    <widget class="QLabel" name="label_22">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>150</y>
+      <x>630</x>
+      <y>230</y>
       <width>111</width>
-      <height>16</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -911,10 +917,10 @@
    <widget class="QWidget" name="layoutWidget_6">
     <property name="geometry">
      <rect>
-      <x>440</x>
-      <y>170</y>
-      <width>111</width>
-      <height>47</height>
+      <x>630</x>
+      <y>270</y>
+      <width>141</width>
+      <height>81</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_10">
@@ -995,10 +1001,10 @@
    <widget class="QLabel" name="label_26">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>150</y>
+      <x>800</x>
+      <y>230</y>
       <width>111</width>
-      <height>16</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -1013,10 +1019,10 @@
    <widget class="QWidget" name="layoutWidget_7">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>170</y>
-      <width>111</width>
-      <height>47</height>
+      <x>800</x>
+      <y>270</y>
+      <width>161</width>
+      <height>81</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_11">
@@ -1097,10 +1103,10 @@
    <widget class="QLabel" name="label_30">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>240</y>
+      <x>480</x>
+      <y>360</y>
       <width>141</width>
-      <height>16</height>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -1115,10 +1121,10 @@
    <widget class="QWidget" name="layoutWidget_8">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>260</y>
-      <width>141</width>
-      <height>47</height>
+      <x>480</x>
+      <y>390</y>
+      <width>181</width>
+      <height>71</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_12">
@@ -1199,10 +1205,10 @@
    <widget class="QLabel" name="label_38">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>251</y>
-      <width>141</width>
-      <height>20</height>
+      <x>750</x>
+      <y>380</y>
+      <width>181</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -1220,10 +1226,10 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>24</y>
-      <width>129</width>
-      <height>155</height>
+      <x>260</x>
+      <y>50</y>
+      <width>161</width>
+      <height>191</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_2">
@@ -1487,10 +1493,10 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>80</y>
-      <width>111</width>
-      <height>47</height>
+      <x>480</x>
+      <y>120</y>
+      <width>131</width>
+      <height>91</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_6">
@@ -1571,10 +1577,10 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>24</y>
-      <width>129</width>
-      <height>155</height>
+      <x>40</x>
+      <y>50</y>
+      <width>151</width>
+      <height>191</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout">
@@ -1838,10 +1844,10 @@
    <widget class="QPushButton" name="menu">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>280</y>
-      <width>61</width>
-      <height>21</height>
+      <x>860</x>
+      <y>430</y>
+      <width>101</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -1853,14 +1859,27 @@
      <string>Menu</string>
     </property>
    </widget>
+   <widget class="QLabel" name="namanpm">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>0</y>
+      <width>601</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>702</width>
-     <height>22</height>
+     <width>1000</width>
+     <height>18</height>
     </rect>
    </property>
   </widget>

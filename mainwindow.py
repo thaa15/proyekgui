@@ -130,7 +130,7 @@ class Modul_modulpage(QMainWindow):
         self.setWindowTitle("Pilih Modul")
         self.modul_1_button.clicked.connect(self.modul_1Page)
         self.modul_2_button.clicked.connect(self.modul_2Page)
-        self.modul_2_button.clicked.connect(self.modul_3Page)
+        self.modul_3_button.clicked.connect(self.modul_3Page)
         self.modul_6_button.clicked.connect(self.modul_6Page)
         self.logout_button.clicked.connect(self.logoutPage)
         self.nama_label.setText(f'Nama: {self.nama}')
@@ -327,24 +327,24 @@ class Modul_2(QMainWindow):
             ts = float(self.sampling_time.text())
 
             zeta = -1*np.log((os)/100)/math.sqrt(pi**2+(np.log((os)/100))**2)
-            zeta = str(round(zeta, 2))
+            zeta = str("{:.2f}".format(zeta))
             self.damping_ratio.setText(zeta)
             zeta = float(self.damping_ratio.text())
 
             wn = 4/((zeta)*(ts))
-            wn = str(round(wn, 2))
+            wn = str("{:.2f}".format(wn))
             self.nat_freq.setText(wn)
             wn = float(self.nat_freq.text())
 
             num_hs = wn**2
-            num_hs = str(round(num_hs, 2))
+            num_hs = str("{:.2f}".format(num_hs))
             self.num_hs.setText(num_hs)
             num_hs = float(self.num_hs.text())
 
             denum2_hs = 2*zeta*wn
-            denum2_hs = str(round(denum2_hs, 4))
+            denum2_hs = str("{:.2f}".format(denum2_hs))
             denum3_hs = wn**2
-            denum3_hs = str(round(denum3_hs, 4))
+            denum3_hs = str("{:.2f}".format(denum3_hs))
             denum_hs = "s^2 + " + denum2_hs + "s + " + denum3_hs
             self.denum_hs.setText(denum_hs)
             denum_hs = self.denum_hs.text()
@@ -431,6 +431,7 @@ class Modul_3(QMainWindow):
         QMainWindow.__init__(self)
         loadUi("Modul_3.ui", self)
         self.setWindowTitle("Modul 3 - Saluran Transmisi")
+        self.namanpm.setText(f'{self.nama}-{self.npm}')
         self.calculate.clicked.connect(self.hitung)
         self.menu.clicked.connect(self.back_main_menu)
         app.aboutToQuit.connect(self.closeEvent)
@@ -602,8 +603,6 @@ class Modul_6(QMainWindow):
         self.back_button.clicked.connect(self.back_main_menu)
         self.nama_label.setText(f'Nama: {self.nama}')
         self.npm_label.setText(f'NPM: {self.npm}')
-        self.tabWidget.setTabText(0, "Regresi")
-        self.tabWidget.setTabText(1, "KNN")
         self.predict_button.clicked.connect(self.predicted_value)
         self.plotGraph.clicked.connect(self.plotgrap)
         app.aboutToQuit.connect(self.closeEvent)
@@ -710,7 +709,7 @@ class Modul_6(QMainWindow):
                 (len(nilai_w_list)*sum_of_xsquare-(sum_of_x)**2)
             self.b = mean_y - self.w*mean_w
             mse_raw = 0
-            x = np.linspace(0, max(nilai_w_list), 1000)
+            x = np.linspace(min(nilai_w_list)-1, max(nilai_w_list)+1, 1000)
             y = self.w*x + self.b
             for i in range(len(nilai_w_list)): 
                 mse_raw = mse_raw + (self.b + nilai_w_list[i]*self.w - nilai_y_list[i])**2

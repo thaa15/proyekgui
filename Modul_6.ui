@@ -78,13 +78,13 @@ QPushButton:hover {
      <string>NPM</string>
     </property>
    </widget>
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>50</y>
+      <y>70</y>
       <width>641</width>
-      <height>471</height>
+      <height>451</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -93,282 +93,395 @@ QPushButton:hover {
 color: black;
 }</string>
     </property>
-    <property name="currentIndex">
-     <number>0</number>
-    </property>
-    <widget class="QWidget" name="tab">
-     <attribute name="title">
-      <string>Tab 1</string>
-     </attribute>
-     <widget class="QGroupBox" name="groupBox">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>10</y>
-        <width>161</width>
-        <height>231</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox{
+    <widget class="QGroupBox" name="groupBox">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>161</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
 	border: 2px solid #EDEEE9;
 	background: #012A3B;
 color: white;
 }</string>
-      </property>
-      <property name="title">
-       <string>W dan Y</string>
-      </property>
-      <widget class="QLabel" name="label">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>20</y>
-         <width>71</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: white;
-</string>
-       </property>
-       <property name="text">
-        <string>Bentuk W</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="W_norm">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>40</y>
-         <width>62</width>
-         <height>14</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: white;
-</string>
-       </property>
-       <property name="text">
-        <string>W</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="lnW_norm">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>60</y>
-         <width>62</width>
-         <height>14</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: white;
-</string>
-       </property>
-       <property name="text">
-        <string>ln W</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="logW_norm">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>80</y>
-         <width>62</width>
-         <height>14</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: white;
-</string>
-       </property>
-       <property name="text">
-        <string>log W</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="seperW_norm">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>100</y>
-         <width>62</width>
-         <height>14</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: white;
-</string>
-       </property>
-       <property name="text">
-        <string>1/W</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_4">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>120</y>
-         <width>71</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: white;
-</string>
-       </property>
-       <property name="text">
-        <string>Bentuk Y</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="Y_norm">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>140</y>
-         <width>62</width>
-         <height>14</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: white;
-</string>
-       </property>
-       <property name="text">
-        <string>Y</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="lnY_norm">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>160</y>
-         <width>62</width>
-         <height>14</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: white;
-</string>
-       </property>
-       <property name="text">
-        <string>ln Y</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="logY_norm">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>180</y>
-         <width>62</width>
-         <height>14</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: white;
-</string>
-       </property>
-       <property name="text">
-        <string>log Y</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="seperY_norm">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>200</y>
-         <width>62</width>
-         <height>14</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: white;
-</string>
-       </property>
-       <property name="text">
-        <string>1/Y</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QLabel" name="label_5">
+     </property>
+     <property name="title">
+      <string>W dan Y</string>
+     </property>
+     <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>0</y>
-        <width>121</width>
+        <x>10</x>
+        <y>20</y>
+        <width>71</width>
         <height>16</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">background: transparent;
+color: white;
+</string>
       </property>
       <property name="text">
-       <string>NILAI W</string>
+       <string>Bentuk W</string>
       </property>
      </widget>
-     <widget class="QTextEdit" name="nilai_W">
+     <widget class="QRadioButton" name="W_norm">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>20</y>
-        <width>104</width>
-        <height>211</height>
+        <x>10</x>
+        <y>40</y>
+        <width>81</width>
+        <height>16</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QTextEdit{
+       <string notr="true">background: transparent;
+color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>W</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="lnW_norm">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>ln W</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="logW_norm">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>log W</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="seperW_norm">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>62</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>1/W</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>Bentuk Y</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="Y_norm">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>Y</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="lnY_norm">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>ln Y</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="logY_norm">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>180</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>log Y</string>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="seperY_norm">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>200</y>
+        <width>91</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;
+</string>
+      </property>
+      <property name="text">
+       <string>1/Y</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>0</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;</string>
+     </property>
+     <property name="text">
+      <string>NILAI W</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="nilai_W">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>20</y>
+       <width>104</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTextEdit{
 background:white;
 color:black;
 }</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_6">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>0</y>
-        <width>121</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: white;</string>
-      </property>
-      <property name="text">
-       <string>NILAI Y</string>
-      </property>
-     </widget>
-     <widget class="QTextEdit" name="nilai_Y">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>20</y>
-        <width>104</width>
-        <height>211</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QTextEdit{
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>0</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: white;</string>
+     </property>
+     <property name="text">
+      <string>NILAI Y</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="nilai_Y">
+     <property name="geometry">
+      <rect>
+       <x>300</x>
+       <y>20</y>
+       <width>104</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTextEdit{
 color: black;
 background: white;
 }</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="plotGraph">
+     </property>
+    </widget>
+    <widget class="QPushButton" name="plotGraph">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>240</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #2B5DD1;
+    color: #FFFFFF;
+    padding: 2px;
+    border-radius: 10px;
+}
+QPushButton:hover {
+    background-color: lightgreen;
+}</string>
+     </property>
+     <property name="text">
+      <string>PLOT</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="persamaan">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>290</y>
+       <width>161</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+	color: white;
+	font-size: 14px;
+font-weight: bold;
+}</string>
+     </property>
+     <property name="text">
+      <string>Y = MW + B</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="mse">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>290</y>
+       <width>241</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+	color: white;
+	font-size: 14px;
+font-weight: bold;
+}</string>
+     </property>
+     <property name="text">
+      <string>MSE = 0</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_2">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>0</y>
+       <width>211</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
+	border: 2px solid #EDEEE9;
+	background: #012A3B;
+color: white;
+}</string>
+     </property>
+     <property name="title">
+      <string>PREDIKSI</string>
+     </property>
+     <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>240</y>
+        <x>10</x>
+        <y>30</y>
+        <width>171</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: transparent;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>MASUKKAN NILAI W</string>
+      </property>
+     </widget>
+     <widget class="QTextEdit" name="prediksi">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>191</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: white;
+color: black;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="predict_button">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>110</y>
         <width>71</width>
         <height>21</height>
        </rect>
@@ -385,197 +498,71 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>PLOT</string>
+       <string>PREDICT</string>
       </property>
      </widget>
-     <widget class="QLabel" name="persamaan">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>290</y>
-        <width>161</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLabel{
-	color: white;
-	font-size: 14px;
-font-weight: bold;
-}</string>
-      </property>
-      <property name="text">
-       <string>Y = MW + B</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="mse">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>290</y>
-        <width>241</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLabel{
-	color: white;
-	font-size: 14px;
-font-weight: bold;
-}</string>
-      </property>
-      <property name="text">
-       <string>MSE = 0</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QGroupBox" name="groupBox_2">
-      <property name="geometry">
-       <rect>
-        <x>410</x>
-        <y>0</y>
-        <width>211</width>
-        <height>101</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox{
-	border: 2px solid #EDEEE9;
-	background: #012A3B;
-color: white;
-}</string>
-      </property>
-      <property name="title">
-       <string>PREDIKSI</string>
-      </property>
-      <widget class="QLabel" name="label_3">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>171</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: white;</string>
-       </property>
-       <property name="text">
-        <string>MASUKKAN NILAI W</string>
-       </property>
-      </widget>
-      <widget class="QTextEdit" name="prediksi">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>30</y>
-         <width>191</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: white;
-color: black;</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="predict_button">
-       <property name="geometry">
-        <rect>
-         <x>70</x>
-         <y>70</y>
-         <width>71</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-    background-color: #2B5DD1;
-    color: #FFFFFF;
-    padding: 2px;
-    border-radius: 10px;
-}
-QPushButton:hover {
-    background-color: lightgreen;
-}</string>
-       </property>
-       <property name="text">
-        <string>PREDICT</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QGroupBox" name="groupBox_3">
-      <property name="geometry">
-       <rect>
-        <x>410</x>
-        <y>110</y>
-        <width>211</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QGroupBox{
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>160</y>
+       <width>211</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox{
 	border: 2px solid #EDEEE9;
 	background: rgb(238, 65, 76);
 	color: white;
 }</string>
-      </property>
-      <property name="title">
-       <string>HASIL PREDIKSI</string>
-      </property>
-      <widget class="QLabel" name="hasil_predik">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>10</y>
-         <width>171</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background: transparent;
-color: white;
-font-weight: bold;
-font-size: 15px;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QLabel" name="korelasi">
+     </property>
+     <property name="title">
+      <string>HASIL PREDIKSI</string>
+     </property>
+     <widget class="QLabel" name="hasil_predik">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>290</y>
-        <width>241</width>
-        <height>61</height>
+        <x>20</x>
+        <y>10</y>
+        <width>171</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QLabel{
+       <string notr="true">background: transparent;
+color: white;
+font-weight: bold;
+font-size: 15px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="korelasi">
+     <property name="geometry">
+      <rect>
+       <x>390</x>
+       <y>290</y>
+       <width>241</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
 	color: white;
 	font-size: 14px;
 font-weight: bold;
 }</string>
-      </property>
-      <property name="text">
-       <string>R = 0</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_2">
-     <attribute name="title">
-      <string>Tab 2</string>
-     </attribute>
+     </property>
+     <property name="text">
+      <string>R = 0</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -603,7 +590,38 @@ background:transparent;
 }</string>
     </property>
     <property name="text">
-     <string>KALKULATOR REGRESI DAN KLASIFIKASI</string>
+     <string>DAN KLASIFIKASI</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>0</y>
+      <width>301</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	text-align: center;
+	color: white;
+	font-size: bold;
+	width: 100%;
+background:transparent;
+}</string>
+    </property>
+    <property name="text">
+     <string>KALKULATOR REGRESI</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>

@@ -43,16 +43,14 @@ class Ui_Modul_modulpage(object):
 "    color: white;\n"
 "}")
         self.npm_label.setObjectName("npm_label")
-        self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
-        self.tabWidget.setGeometry(QtCore.QRect(0, 50, 641, 471))
-        self.tabWidget.setStyleSheet("QWidget{\n"
+        self.widget = QtWidgets.QWidget(self.centralwidget)
+        self.widget.setGeometry(QtCore.QRect(0, 70, 641, 451))
+        self.widget.setStyleSheet("QWidget{\n"
 "    background-color: #73B6BC;\n"
 "color: black;\n"
 "}")
-        self.tabWidget.setObjectName("tabWidget")
-        self.tab = QtWidgets.QWidget()
-        self.tab.setObjectName("tab")
-        self.groupBox = QtWidgets.QGroupBox(self.tab)
+        self.widget.setObjectName("widget")
+        self.groupBox = QtWidgets.QGroupBox(self.widget)
         self.groupBox.setGeometry(QtCore.QRect(0, 10, 161, 231))
         self.groupBox.setStyleSheet("QGroupBox{\n"
 "    border: 2px solid #EDEEE9;\n"
@@ -67,19 +65,19 @@ class Ui_Modul_modulpage(object):
 "")
         self.label.setObjectName("label")
         self.W_norm = QtWidgets.QRadioButton(self.groupBox)
-        self.W_norm.setGeometry(QtCore.QRect(10, 40, 62, 14))
+        self.W_norm.setGeometry(QtCore.QRect(10, 40, 81, 16))
         self.W_norm.setStyleSheet("background: transparent;\n"
 "color: white;\n"
 "")
         self.W_norm.setObjectName("W_norm")
         self.lnW_norm = QtWidgets.QRadioButton(self.groupBox)
-        self.lnW_norm.setGeometry(QtCore.QRect(10, 60, 62, 14))
+        self.lnW_norm.setGeometry(QtCore.QRect(10, 60, 91, 16))
         self.lnW_norm.setStyleSheet("background: transparent;\n"
 "color: white;\n"
 "")
         self.lnW_norm.setObjectName("lnW_norm")
         self.logW_norm = QtWidgets.QRadioButton(self.groupBox)
-        self.logW_norm.setGeometry(QtCore.QRect(10, 80, 62, 14))
+        self.logW_norm.setGeometry(QtCore.QRect(10, 80, 91, 16))
         self.logW_norm.setStyleSheet("background: transparent;\n"
 "color: white;\n"
 "")
@@ -97,52 +95,52 @@ class Ui_Modul_modulpage(object):
 "")
         self.label_4.setObjectName("label_4")
         self.Y_norm = QtWidgets.QRadioButton(self.groupBox)
-        self.Y_norm.setGeometry(QtCore.QRect(10, 140, 62, 14))
+        self.Y_norm.setGeometry(QtCore.QRect(10, 140, 101, 16))
         self.Y_norm.setStyleSheet("background: transparent;\n"
 "color: white;\n"
 "")
         self.Y_norm.setObjectName("Y_norm")
         self.lnY_norm = QtWidgets.QRadioButton(self.groupBox)
-        self.lnY_norm.setGeometry(QtCore.QRect(10, 160, 62, 14))
+        self.lnY_norm.setGeometry(QtCore.QRect(10, 160, 91, 16))
         self.lnY_norm.setStyleSheet("background: transparent;\n"
 "color: white;\n"
 "")
         self.lnY_norm.setObjectName("lnY_norm")
         self.logY_norm = QtWidgets.QRadioButton(self.groupBox)
-        self.logY_norm.setGeometry(QtCore.QRect(10, 180, 62, 14))
+        self.logY_norm.setGeometry(QtCore.QRect(10, 180, 91, 16))
         self.logY_norm.setStyleSheet("background: transparent;\n"
 "color: white;\n"
 "")
         self.logY_norm.setObjectName("logY_norm")
         self.seperY_norm = QtWidgets.QRadioButton(self.groupBox)
-        self.seperY_norm.setGeometry(QtCore.QRect(10, 200, 62, 14))
+        self.seperY_norm.setGeometry(QtCore.QRect(10, 200, 91, 16))
         self.seperY_norm.setStyleSheet("background: transparent;\n"
 "color: white;\n"
 "")
         self.seperY_norm.setObjectName("seperY_norm")
-        self.label_5 = QtWidgets.QLabel(self.tab)
+        self.label_5 = QtWidgets.QLabel(self.widget)
         self.label_5.setGeometry(QtCore.QRect(180, 0, 121, 16))
         self.label_5.setStyleSheet("color: white;")
         self.label_5.setObjectName("label_5")
-        self.nilai_W = QtWidgets.QTextEdit(self.tab)
+        self.nilai_W = QtWidgets.QTextEdit(self.widget)
         self.nilai_W.setGeometry(QtCore.QRect(180, 20, 104, 211))
         self.nilai_W.setStyleSheet("QTextEdit{\n"
 "background:white;\n"
 "color:black;\n"
 "}")
         self.nilai_W.setObjectName("nilai_W")
-        self.label_6 = QtWidgets.QLabel(self.tab)
+        self.label_6 = QtWidgets.QLabel(self.widget)
         self.label_6.setGeometry(QtCore.QRect(300, 0, 121, 16))
         self.label_6.setStyleSheet("color: white;")
         self.label_6.setObjectName("label_6")
-        self.nilai_Y = QtWidgets.QTextEdit(self.tab)
+        self.nilai_Y = QtWidgets.QTextEdit(self.widget)
         self.nilai_Y.setGeometry(QtCore.QRect(300, 20, 104, 211))
         self.nilai_Y.setStyleSheet("QTextEdit{\n"
 "color: black;\n"
 "background: white;\n"
 "}")
         self.nilai_Y.setObjectName("nilai_Y")
-        self.plotGraph = QtWidgets.QPushButton(self.tab)
+        self.plotGraph = QtWidgets.QPushButton(self.widget)
         self.plotGraph.setGeometry(QtCore.QRect(180, 240, 71, 21))
         self.plotGraph.setStyleSheet("QPushButton {\n"
 "    background-color: #2B5DD1;\n"
@@ -154,7 +152,7 @@ class Ui_Modul_modulpage(object):
 "    background-color: lightgreen;\n"
 "}")
         self.plotGraph.setObjectName("plotGraph")
-        self.persamaan = QtWidgets.QLabel(self.tab)
+        self.persamaan = QtWidgets.QLabel(self.widget)
         self.persamaan.setGeometry(QtCore.QRect(0, 290, 161, 61))
         self.persamaan.setStyleSheet("QLabel{\n"
 "    color: white;\n"
@@ -163,7 +161,7 @@ class Ui_Modul_modulpage(object):
 "}")
         self.persamaan.setAlignment(QtCore.Qt.AlignCenter)
         self.persamaan.setObjectName("persamaan")
-        self.mse = QtWidgets.QLabel(self.tab)
+        self.mse = QtWidgets.QLabel(self.widget)
         self.mse.setGeometry(QtCore.QRect(160, 290, 241, 61))
         self.mse.setStyleSheet("QLabel{\n"
 "    color: white;\n"
@@ -172,8 +170,8 @@ class Ui_Modul_modulpage(object):
 "}")
         self.mse.setAlignment(QtCore.Qt.AlignCenter)
         self.mse.setObjectName("mse")
-        self.groupBox_2 = QtWidgets.QGroupBox(self.tab)
-        self.groupBox_2.setGeometry(QtCore.QRect(410, 0, 211, 101))
+        self.groupBox_2 = QtWidgets.QGroupBox(self.widget)
+        self.groupBox_2.setGeometry(QtCore.QRect(410, 0, 211, 141))
         self.groupBox_2.setStyleSheet("QGroupBox{\n"
 "    border: 2px solid #EDEEE9;\n"
 "    background: #012A3B;\n"
@@ -181,17 +179,17 @@ class Ui_Modul_modulpage(object):
 "}")
         self.groupBox_2.setObjectName("groupBox_2")
         self.label_3 = QtWidgets.QLabel(self.groupBox_2)
-        self.label_3.setGeometry(QtCore.QRect(10, 10, 171, 21))
+        self.label_3.setGeometry(QtCore.QRect(10, 30, 171, 21))
         self.label_3.setStyleSheet("background: transparent;\n"
 "color: white;")
         self.label_3.setObjectName("label_3")
         self.prediksi = QtWidgets.QTextEdit(self.groupBox_2)
-        self.prediksi.setGeometry(QtCore.QRect(10, 30, 191, 31))
+        self.prediksi.setGeometry(QtCore.QRect(10, 60, 191, 31))
         self.prediksi.setStyleSheet("background: white;\n"
 "color: black;")
         self.prediksi.setObjectName("prediksi")
         self.predict_button = QtWidgets.QPushButton(self.groupBox_2)
-        self.predict_button.setGeometry(QtCore.QRect(70, 70, 71, 21))
+        self.predict_button.setGeometry(QtCore.QRect(70, 110, 71, 21))
         self.predict_button.setStyleSheet("QPushButton {\n"
 "    background-color: #2B5DD1;\n"
 "    color: #FFFFFF;\n"
@@ -202,8 +200,8 @@ class Ui_Modul_modulpage(object):
 "    background-color: lightgreen;\n"
 "}")
         self.predict_button.setObjectName("predict_button")
-        self.groupBox_3 = QtWidgets.QGroupBox(self.tab)
-        self.groupBox_3.setGeometry(QtCore.QRect(410, 110, 211, 71))
+        self.groupBox_3 = QtWidgets.QGroupBox(self.widget)
+        self.groupBox_3.setGeometry(QtCore.QRect(410, 160, 211, 71))
         self.groupBox_3.setStyleSheet("QGroupBox{\n"
 "    border: 2px solid #EDEEE9;\n"
 "    background: rgb(238, 65, 76);\n"
@@ -218,7 +216,7 @@ class Ui_Modul_modulpage(object):
 "font-size: 15px;")
         self.hasil_predik.setText("")
         self.hasil_predik.setObjectName("hasil_predik")
-        self.korelasi = QtWidgets.QLabel(self.tab)
+        self.korelasi = QtWidgets.QLabel(self.widget)
         self.korelasi.setGeometry(QtCore.QRect(390, 290, 241, 61))
         self.korelasi.setStyleSheet("QLabel{\n"
 "    color: white;\n"
@@ -227,10 +225,6 @@ class Ui_Modul_modulpage(object):
 "}")
         self.korelasi.setAlignment(QtCore.Qt.AlignCenter)
         self.korelasi.setObjectName("korelasi")
-        self.tabWidget.addTab(self.tab, "")
-        self.tab_2 = QtWidgets.QWidget()
-        self.tab_2.setObjectName("tab_2")
-        self.tabWidget.addTab(self.tab_2, "")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(200, 30, 301, 31))
         font = QtGui.QFont()
@@ -246,6 +240,21 @@ class Ui_Modul_modulpage(object):
 "}")
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
+        self.label_7 = QtWidgets.QLabel(self.centralwidget)
+        self.label_7.setGeometry(QtCore.QRect(200, 0, 301, 31))
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_7.setFont(font)
+        self.label_7.setStyleSheet("QLabel{\n"
+"    text-align: center;\n"
+"    color: white;\n"
+"    font-size: bold;\n"
+"    width: 100%;\n"
+"background:transparent;\n"
+"}")
+        self.label_7.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_7.setObjectName("label_7")
         Modul_modulpage.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(Modul_modulpage)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 631, 18))
@@ -256,7 +265,6 @@ class Ui_Modul_modulpage(object):
         Modul_modulpage.setStatusBar(self.statusbar)
 
         self.retranslateUi(Modul_modulpage)
-        self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Modul_modulpage)
 
     def retranslateUi(self, Modul_modulpage):
@@ -286,9 +294,8 @@ class Ui_Modul_modulpage(object):
         self.predict_button.setText(_translate("Modul_modulpage", "PREDICT"))
         self.groupBox_3.setTitle(_translate("Modul_modulpage", "HASIL PREDIKSI"))
         self.korelasi.setText(_translate("Modul_modulpage", "R = 0"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("Modul_modulpage", "Tab 1"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("Modul_modulpage", "Tab 2"))
-        self.label_2.setText(_translate("Modul_modulpage", "KALKULATOR REGRESI DAN KLASIFIKASI"))
+        self.label_2.setText(_translate("Modul_modulpage", "DAN KLASIFIKASI"))
+        self.label_7.setText(_translate("Modul_modulpage", "KALKULATOR REGRESI"))
 
 
 if __name__ == "__main__":

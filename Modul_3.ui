@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>729</width>
-    <height>410</height>
+    <width>769</width>
+    <height>408</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>30</x>
       <y>190</y>
-      <width>129</width>
-      <height>155</height>
+      <width>141</width>
+      <height>161</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_4">
@@ -287,10 +287,10 @@
    <widget class="QWidget" name="layoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>190</x>
       <y>190</y>
-      <width>129</width>
-      <height>155</height>
+      <width>131</width>
+      <height>161</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout_5">
@@ -557,9 +557,9 @@
    <widget class="QPushButton" name="calculate">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>550</x>
       <y>280</y>
-      <width>71</width>
+      <width>81</width>
       <height>21</height>
      </rect>
     </property>
@@ -578,7 +578,7 @@
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>360</x>
       <y>60</y>
       <width>111</width>
       <height>16</height>
@@ -603,7 +603,7 @@ color: rgb(1, 42, 59)</string>
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>490</x>
       <y>60</y>
       <width>111</width>
       <height>16</height>
@@ -628,7 +628,7 @@ color: rgb(1, 42, 59)</string>
    <widget class="QWidget" name="layoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>490</x>
       <y>80</y>
       <width>111</width>
       <height>47</height>
@@ -712,7 +712,7 @@ color: rgb(1, 42, 59)</string>
    <widget class="QLabel" name="label_14">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>620</x>
       <y>60</y>
       <width>111</width>
       <height>16</height>
@@ -737,7 +737,7 @@ color: rgb(1, 42, 59)</string>
    <widget class="QWidget" name="layoutWidget_4">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>620</x>
       <y>80</y>
       <width>111</width>
       <height>47</height>
@@ -821,7 +821,7 @@ color: rgb(1, 42, 59)</string>
    <widget class="QLabel" name="label_18">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>360</x>
       <y>150</y>
       <width>111</width>
       <height>16</height>
@@ -846,7 +846,7 @@ color: rgb(1, 42, 59)</string>
    <widget class="QWidget" name="layoutWidget_5">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>360</x>
       <y>170</y>
       <width>111</width>
       <height>47</height>
@@ -930,7 +930,7 @@ color: rgb(1, 42, 59)</string>
    <widget class="QLabel" name="label_22">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>490</x>
       <y>150</y>
       <width>111</width>
       <height>16</height>
@@ -955,7 +955,7 @@ color: rgb(1, 42, 59)</string>
    <widget class="QWidget" name="layoutWidget_6">
     <property name="geometry">
      <rect>
-      <x>470</x>
+      <x>490</x>
       <y>170</y>
       <width>111</width>
       <height>47</height>
@@ -1039,7 +1039,7 @@ color: rgb(1, 42, 59)</string>
    <widget class="QLabel" name="label_26">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>620</x>
       <y>150</y>
       <width>111</width>
       <height>16</height>
@@ -1064,7 +1064,7 @@ color: rgb(1, 42, 59)</string>
    <widget class="QWidget" name="layoutWidget_7">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>620</x>
       <y>170</y>
       <width>111</width>
       <height>47</height>
@@ -1148,7 +1148,7 @@ color: rgb(1, 42, 59)</string>
    <widget class="QLabel" name="label_30">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>360</x>
       <y>240</y>
       <width>141</width>
       <height>16</height>
@@ -1170,7 +1170,7 @@ color: rgb(1, 42, 59)</string>
    <widget class="QWidget" name="layoutWidget_8">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>360</x>
       <y>260</y>
       <width>141</width>
       <height>47</height>
@@ -1254,10 +1254,10 @@ color: rgb(1, 42, 59)</string>
    <widget class="QLabel" name="label_38">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>251</y>
-      <width>141</width>
-      <height>20</height>
+      <x>540</x>
+      <y>240</y>
+      <width>181</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="font">
@@ -1275,12 +1275,12 @@ color: rgb(1, 42, 59)</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>190</x>
       <y>24</y>
-      <width>129</width>
+      <width>131</width>
       <height>155</height>
      </rect>
     </property>
@@ -1545,14 +1545,17 @@ color: rgb(1, 42, 59)</string>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="widget_3" native="true">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>360</x>
       <y>80</y>
       <width>111</width>
-      <height>47</height>
+      <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <layout class="QGridLayout" name="gridLayout_6">
      <item row="0" column="0">
@@ -1629,12 +1632,12 @@ color: rgb(1, 42, 59)</string>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="widget2" native="true">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>24</y>
-      <width>129</width>
+      <width>141</width>
       <height>155</height>
      </rect>
     </property>
@@ -1657,15 +1660,15 @@ color: rgb(1, 42, 59)</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="poin_label">
+     <item row="2" column="0">
+      <widget class="QLabel" name="x_1min_label">
        <property name="font">
         <font>
          <pointsize>7</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>Poin</string>
+        <string>x_1min</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -1702,42 +1705,18 @@ color: rgb(1, 42, 59)</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="x_1min_label">
+     <item row="1" column="0">
+      <widget class="QLabel" name="poin_label">
        <property name="font">
         <font>
          <pointsize>7</pointsize>
         </font>
        </property>
        <property name="text">
-        <string>x_1min</string>
+        <string>Poin</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="lokasi_hs_1">
-       <property name="font">
-        <font>
-         <pointsize>7</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="2">
-      <widget class="QLineEdit" name="arus_hs_1">
-       <property name="font">
-        <font>
-         <pointsize>7</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string/>
        </property>
       </widget>
      </item>
@@ -1756,8 +1735,32 @@ color: rgb(1, 42, 59)</string>
        </property>
       </widget>
      </item>
+     <item row="2" column="2">
+      <widget class="QLineEdit" name="arus_hs_1">
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
      <item row="3" column="1">
       <widget class="QLineEdit" name="lokasi_hs_2">
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lokasi_hs_1">
        <property name="font">
         <font>
          <pointsize>7</pointsize>
@@ -1780,23 +1783,8 @@ color: rgb(1, 42, 59)</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="x_3min_label">
-       <property name="font">
-        <font>
-         <pointsize>7</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>x_3min</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="lokasi_hs_3">
+     <item row="4" column="2">
+      <widget class="QLineEdit" name="arus_hs_3">
        <property name="font">
         <font>
          <pointsize>7</pointsize>
@@ -1807,8 +1795,20 @@ color: rgb(1, 42, 59)</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="2">
-      <widget class="QLineEdit" name="arus_hs_3">
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="lokasi_hs_4">
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="lokasi_hs_3">
        <property name="font">
         <font>
          <pointsize>7</pointsize>
@@ -1834,27 +1834,18 @@ color: rgb(1, 42, 59)</string>
        </property>
       </widget>
      </item>
-     <item row="5" column="1">
-      <widget class="QLineEdit" name="lokasi_hs_4">
+     <item row="4" column="0">
+      <widget class="QLabel" name="x_3min_label">
        <property name="font">
         <font>
          <pointsize>7</pointsize>
         </font>
        </property>
        <property name="text">
-        <string/>
+        <string>x_3min</string>
        </property>
-      </widget>
-     </item>
-     <item row="5" column="2">
-      <widget class="QLineEdit" name="arus_hs_4">
-       <property name="font">
-        <font>
-         <pointsize>7</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string/>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -1873,8 +1864,8 @@ color: rgb(1, 42, 59)</string>
        </property>
       </widget>
      </item>
-     <item row="6" column="1">
-      <widget class="QLineEdit" name="lokasi_hs_5">
+     <item row="5" column="2">
+      <widget class="QLineEdit" name="arus_hs_4">
        <property name="font">
         <font>
          <pointsize>7</pointsize>
@@ -1897,14 +1888,26 @@ color: rgb(1, 42, 59)</string>
        </property>
       </widget>
      </item>
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="lokasi_hs_5">
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
    <widget class="QPushButton" name="menu">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>640</x>
       <y>280</y>
-      <width>61</width>
+      <width>81</width>
       <height>21</height>
      </rect>
     </property>
@@ -1925,7 +1928,7 @@ color: rgb(1, 42, 59)</string>
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>311</width>
+      <width>331</width>
       <height>351</height>
      </rect>
     </property>
@@ -1940,7 +1943,7 @@ border: 2px solid rgb(161, 209, 210)</string>
    <widget class="QLabel" name="label_34">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>180</x>
       <y>20</y>
       <width>151</width>
       <height>161</height>
@@ -1958,7 +1961,7 @@ border: 2px solid rgb(161, 209, 210)</string>
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>141</width>
+      <width>161</width>
       <height>161</height>
      </rect>
     </property>
@@ -1974,7 +1977,7 @@ border: 2px solid rgb(161, 209, 210)</string>
      <rect>
       <x>20</x>
       <y>180</y>
-      <width>141</width>
+      <width>161</width>
       <height>171</height>
      </rect>
     </property>
@@ -1988,7 +1991,7 @@ border: 2px solid rgb(161, 209, 210)</string>
    <widget class="QLabel" name="label_37">
     <property name="geometry">
      <rect>
-      <x>160</x>
+      <x>180</x>
       <y>180</y>
       <width>151</width>
       <height>171</height>
@@ -2004,9 +2007,9 @@ border: 2px solid rgb(161, 209, 210)</string>
    <widget class="QLabel" name="label_39">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>350</x>
       <y>50</y>
-      <width>391</width>
+      <width>411</width>
       <height>271</height>
      </rect>
     </property>
@@ -2021,9 +2024,9 @@ border: 2px solid rgb(238, 65, 76)</string>
    <widget class="QLabel" name="label_40">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>530</x>
       <y>250</y>
-      <width>161</width>
+      <width>201</width>
       <height>61</height>
      </rect>
     </property>
@@ -2038,14 +2041,30 @@ border: 1px solid rgb(238, 65, 76)</string>
    <widget class="QLabel" name="label_41">
     <property name="geometry">
      <rect>
-      <x>-4</x>
-      <y>-11</y>
-      <width>751</width>
+      <x>0</x>
+      <y>0</y>
+      <width>801</width>
       <height>431</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(1, 42, 59)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="namanpm">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>10</y>
+      <width>351</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;</string>
     </property>
     <property name="text">
      <string/>
@@ -2076,18 +2095,19 @@ border: 1px solid rgb(238, 65, 76)</string>
    <zorder>label_30</zorder>
    <zorder>layoutWidget_8</zorder>
    <zorder>label_38</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
+   <zorder>widget</zorder>
+   <zorder>widget_3</zorder>
+   <zorder>widget2</zorder>
    <zorder>menu</zorder>
+   <zorder>namanpm</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>729</width>
-     <height>22</height>
+     <width>769</width>
+     <height>18</height>
     </rect>
    </property>
   </widget>

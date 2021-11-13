@@ -225,23 +225,8 @@ class Ui_Modul_modulpage(object):
 "}")
         self.korelasi.setAlignment(QtCore.Qt.AlignCenter)
         self.korelasi.setObjectName("korelasi")
-        self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(200, 30, 301, 31))
-        font = QtGui.QFont()
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_2.setFont(font)
-        self.label_2.setStyleSheet("QLabel{\n"
-"    text-align: center;\n"
-"    color: white;\n"
-"    font-size: bold;\n"
-"    width: 100%;\n"
-"background:transparent;\n"
-"}")
-        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_2.setObjectName("label_2")
         self.label_7 = QtWidgets.QLabel(self.centralwidget)
-        self.label_7.setGeometry(QtCore.QRect(200, 0, 301, 31))
+        self.label_7.setGeometry(QtCore.QRect(200, 30, 301, 31))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
@@ -294,15 +279,4 @@ class Ui_Modul_modulpage(object):
         self.predict_button.setText(_translate("Modul_modulpage", "PREDICT"))
         self.groupBox_3.setTitle(_translate("Modul_modulpage", "HASIL PREDIKSI"))
         self.korelasi.setText(_translate("Modul_modulpage", "R = 0"))
-        self.label_2.setText(_translate("Modul_modulpage", "DAN KLASIFIKASI"))
         self.label_7.setText(_translate("Modul_modulpage", "KALKULATOR REGRESI"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Modul_modulpage = QtWidgets.QMainWindow()
-    ui = Ui_Modul_modulpage()
-    ui.setupUi(Modul_modulpage)
-    Modul_modulpage.show()
-    sys.exit(app.exec_())

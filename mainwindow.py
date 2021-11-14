@@ -5,14 +5,13 @@ from PyQt5.uic import loadUi
 import sys
 import numpy as np
 import math
-import cmath
 from pylab import *
+import scipy.signal as signal
 from scipy.signal import lfilter, firwin, freqz
-import cv2
-import pytesseract
 import requests
-#import gambar_rc
-pytesseract.pytesseract.tesseract_cmd = r'C:\\Users\\abang\\AppData\\Local\\Programs\\Tesseract-OCR\\tesseract.exe'
+from sympy import *
+import control
+import control.matlab
 
 
 class LoginPage(QMainWindow):
@@ -20,9 +19,7 @@ class LoginPage(QMainWindow):
         QMainWindow.__init__(self)
         loadUi("Login_Page.ui", self)
         self.setWindowTitle("Login Page")
-        self.token = "null"
         self.signin_button.clicked.connect(self.tombol_login)
-        self.camera_button.clicked.connect(self.open_camera)
         self.npm_input.setPlaceholderText("Masukkan NPM Anda!")
         self.nama_input.setPlaceholderText("Masukkan Nama Anda!")
         self.setFocus()
@@ -45,8 +42,10 @@ class LoginPage(QMainWindow):
             self.msg.setWindowTitle("Berhasil Masuk!")
             self.msg.buttonClicked.connect(self.nextpage_pressed)
             self.msg.show()
-            payload = {'name':self.nama, 'npm': self.npm, 'activity' : 'Main Menu'}
-            r = requests.post('https://gui-kel-1.herokuapp.com/profiles', json=payload)
+            payload = {'name': self.nama,
+                       'npm': self.npm, 'activity': 'Main Menu'}
+            r = requests.post(
+                'https://gui-kel-1.herokuapp.com/profiles', json=payload)
             self.token = r.json()['data']['profilesId']
         except Exception:
             if len(self.nama) == 0:
@@ -55,69 +54,11 @@ class LoginPage(QMainWindow):
             else:
                 QMessageBox.about(self, "Eror Input Bukan NPM",
                                   "Masukkan NPM dengan Benar!")
-    def open_camera(self):
-        self.CurrentWindow = CameraOpen()
-        self.CurrentWindow.show()
-        self.close()
 
     def nextpage_pressed(self):
         self.CurrentWindow = Modul_modulpage(self.nama, self.npm, self.token)
         self.CurrentWindow.show()
         self.close()
-
-
-class CameraOpen(QMainWindow):
-    def __init__(self):
-        QMainWindow.__init__(self)
-        loadUi("Camera_login.ui", self)
-        self.setWindowTitle("Letakkan KTM depan Kamera!")
-        self.back_button.clicked.connect(self.to_main_login)
-        self.Camera = Camera()
-        self.Camera.start()
-        self.Camera.ImageUpdate.connect(self.ImageUpdateSlot)
-
-    def ImageUpdateSlot(self, Image):
-        self.FeedLabel.setPixmap(QPixmap.fromImage(Image))
-
-    def to_main_login(self):
-        self.Camera.stop()
-        self.CurrentWindow = LoginPage()
-        self.CurrentWindow.show()
-        self.close()
-
-
-class Camera(QThread):
-    ImageUpdate = pyqtSignal(QImage)
-    font = cv2.FONT_HERSHEY_PLAIN
-
-    def run(self):
-        Capture = cv2.VideoCapture(0)
-        self.ThreadActive = True
-        while self.ThreadActive:
-            ret, frame = Capture.read()
-            if ret:
-                imgH, imgW, _ = frame.shape
-                imgchar = pytesseract.image_to_string(frame)
-                print(imgchar)
-                imgboxes = pytesseract.image_to_boxes(frame)
-                for boxes in imgboxes.splitlines():
-                    boxes = boxes.split(' ')
-                    x, y, w, h = int(boxes[1]), int(
-                        boxes[2]), int(boxes[3]), int(boxes[4])
-                    cv2.rectangle(frame, (x, imgH-y),
-                                  (w, imgH-h), (0, 0, 255), 3)
-                strings = imgchar.splitlines()
-                FlippedImage = cv2.flip(frame, 1)
-                ConvertToQtFormat = QImage(
-                    FlippedImage.data, FlippedImage.shape[1], FlippedImage.shape[0], QImage.Format_RGB888)
-                Pic = ConvertToQtFormat.scaled(640, 480, Qt.KeepAspectRatio)
-                self.ImageUpdate.emit(Pic)
-
-            else:
-                break
-
-    def stop(self):
-        self.ThreadActive = False
 
 
 class Modul_modulpage(QMainWindow):
@@ -131,7 +72,8 @@ class Modul_modulpage(QMainWindow):
         self.modul_1_button.clicked.connect(self.modul_1Page)
         self.modul_2_button.clicked.connect(self.modul_2Page)
         self.modul_3_button.clicked.connect(self.modul_3Page)
-        self.modul_6_button.clicked.connect(self.modul_6Page)
+        self.modul_4_button.clicked.connect(self.modul_4Page)
+        self.modul_5_button.clicked.connect(self.modul_5Page)
         self.logout_button.clicked.connect(self.logoutPage)
         self.nama_label.setText(f'Nama: {self.nama}')
         self.npm_label.setText(f'NPM: {self.npm}')
@@ -139,46 +81,62 @@ class Modul_modulpage(QMainWindow):
         self.force_close = True
 
     def modul_1Page(self):
-        payload = {'activity' : 'Modul 1'}
-        requests.put(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
+        payload = {'activity': 'Modul 1'}
+        requests.put(
+            f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
         self.CurrentWindow = Modul_1(self.nama, self.npm, self.token)
         self.CurrentWindow.show()
         self.force_close = False
         self.close()
 
     def modul_2Page(self):
-        payload = {'activity' : 'Modul 2'}
-        requests.put(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
+        payload = {'activity': 'Modul 2'}
+        requests.put(
+            f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
         self.CurrentWindow = Modul_2(self.nama, self.npm, self.token)
         self.force_close = False
         self.CurrentWindow.show()
         self.close()
-    
+
     def modul_3Page(self):
-        payload = {'activity' : 'Modul 3'}
-        requests.put(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
+        payload = {'activity': 'Modul 3'}
+        requests.put(
+            f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
         self.CurrentWindow = Modul_3(self.nama, self.npm, self.token)
         self.force_close = False
         self.CurrentWindow.show()
         self.close()
 
-    def modul_6Page(self):
-        payload = {'activity' : 'Modul 6'}
-        requests.put(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
-        self.CurrentWindow = Modul_6(self.nama, self.npm, self.token)
+    def modul_4Page(self):
+        payload = {'activity': 'Modul 4'}
+        requests.put(
+            f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
+        self.CurrentWindow = Modul_4(self.nama, self.npm, self.token)
+        self.force_close = False
+        self.CurrentWindow.show()
+        self.close()
+
+    def modul_5Page(self):
+        payload = {'activity': 'Modul 5'}
+        requests.put(
+            f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
+        self.CurrentWindow = Modul_5(self.nama, self.npm, self.token)
         self.force_close = False
         self.CurrentWindow.show()
         self.close()
 
     def logoutPage(self):
-        requests.delete(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
+        requests.delete(
+            f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
         self.CurrentWindow = LoginPage()
         self.CurrentWindow.show()
         self.force_close = False
         self.close()
+
     def closeEvent(self, event):
         if self.force_close is True:
-            requests.delete(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
+            requests.delete(
+                f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
             sys.exit(0)
 
 
@@ -286,8 +244,9 @@ class Modul_1(QMainWindow):
             QMessageBox.about(self, "Error", "Isi semua input!")
 
     def back_main_menu(self):
-        payload = {'activity' : 'Main Menu'}
-        requests.put(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
+        payload = {'activity': 'Main Menu'}
+        requests.put(
+            f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
         self.CurrentWindow = Modul_modulpage(self.nama, self.npm, self.token)
         self.force_close = False
         self.CurrentWindow.show()
@@ -295,7 +254,8 @@ class Modul_1(QMainWindow):
 
     def closeEvent(self, event):
         if self.force_close is True:
-            requests.delete(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
+            requests.delete(
+                f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
             sys.exit(0)
 
 
@@ -398,21 +358,21 @@ class Modul_2(QMainWindow):
             self.kd.setText(kd)
         except Exception:
             QMessageBox.about(self, "Error", "Isi semua input!")
-    
+
     def hitungKI(self):
-        
+
         zero_gpi = float(self.zero_gpi.text())
         gpi = (s_hs[0]+zero_gpi)/(s_hs[0])
         ki_hasil = kd_hasil*(1/gpi)
         ki = abs(ki_hasil)
 
-        ki = str(round(ki,2))
+        ki = str(round(ki, 2))
         self.ki.setText(ki)
 
-
     def back_main_menu(self):
-        payload = {'activity' : 'Main Menu'}
-        requests.put(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
+        payload = {'activity': 'Main Menu'}
+        requests.put(
+            f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
         self.CurrentWindow = Modul_modulpage(self.nama, self.npm, self.token)
         self.force_close = False
         self.CurrentWindow.show()
@@ -420,8 +380,10 @@ class Modul_2(QMainWindow):
 
     def closeEvent(self, event):
         if self.force_close is True:
-            requests.delete(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
+            requests.delete(
+                f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
             sys.exit(0)
+
 
 class Modul_3(QMainWindow):
     def __init__(self, nama, npm, token):
@@ -436,10 +398,10 @@ class Modul_3(QMainWindow):
         self.menu.clicked.connect(self.back_main_menu)
         app.aboutToQuit.connect(self.closeEvent)
         self.force_close = True
-    
+
     def hitung(self):
-        try: 
-        #ngambil data hubung singkat
+        try:
+            # ngambil data hubung singkat
             global lokasiHS_1, lokasiHS_2, lokasiHS_3, lokasiHS_4, lokasiHS_5
             global arusHS_1, arusHS_2, arusHS_3, arusHS_4, arusHS_5
             lokasiHS_1 = float(self.lokasi_hs_1.text())
@@ -453,7 +415,7 @@ class Modul_3(QMainWindow):
             arusHS_4 = float(self.arus_hs_4.text())
             arusHS_5 = float(self.arus_hs_5.text())
 
-            #ngambil data resistif
+            # ngambil data resistif
             global lokasiR_1, lokasiR_2, lokasiR_3, lokasiR_4, lokasiR_5
             global arusR_1, arusR_2, arusR_3, arusR_4, arusR_5
             lokasiR_1 = float(self.lokasi_r_1.text())
@@ -467,7 +429,7 @@ class Modul_3(QMainWindow):
             arusR_4 = float(self.arus_r_4.text())
             arusR_5 = float(self.arus_r_5.text())
 
-            #ngambil data antena
+            # ngambil data antena
             global lokasiA_1, lokasiA_2, lokasiA_3, lokasiA_4, lokasiA_5
             global arusA_1, arusA_2, arusA_3, arusA_4, arusA_5
             lokasiA_1 = float(self.lokasi_a_1.text())
@@ -481,7 +443,7 @@ class Modul_3(QMainWindow):
             arusA_4 = float(self.arus_a_4.text())
             arusA_5 = float(self.arus_a_5.text())
 
-            #ngambil data antena
+            # ngambil data antena
             global lokasiG_1, lokasiG_2, lokasiG_3, lokasiG_4, lokasiG_5
             global arusG_1, arusG_2, arusG_3, arusG_4, arusG_5
             lokasiG_1 = float(self.lokasi_g_1.text())
@@ -495,29 +457,32 @@ class Modul_3(QMainWindow):
             arusG_4 = float(self.arus_g_4.text())
             arusG_5 = float(self.arus_g_5.text())
 
-            #panjang gelombang pertama
+            # panjang gelombang pertama
             lamda_13 = 2*(lokasiHS_3 - lokasiHS_1)
-            lamda_13 = str(round(lamda_13,2))
+            lamda_13 = str(round(lamda_13, 2))
             lamda_35 = 2*(lokasiHS_5 - lokasiHS_3)
-            lamda_35 = str(round(lamda_35,2))
+            lamda_35 = str(round(lamda_35, 2))
             lamda_rata = (float(lamda_13) + float(lamda_35))/2
-            lamda_rata = str(round(lamda_rata,2))
+            lamda_rata = str(round(lamda_rata, 2))
             self.lamda13.setText(lamda_13)
             self.lamda35.setText(lamda_35)
             self.lamda_rata.setText(lamda_rata)
 
-            #nilai d beban
-            d_r = (lokasiR_1 - lokasiHS_1 + lokasiR_3 - lokasiHS_3 + lokasiR_5 - lokasiHS_5)/3
+            # nilai d beban
+            d_r = (lokasiR_1 - lokasiHS_1 + lokasiR_3 -
+                   lokasiHS_3 + lokasiR_5 - lokasiHS_5)/3
             d_r = str(round(d_r, 2))
-            d_a = (lokasiA_1 - lokasiHS_1 + lokasiA_3 - lokasiHS_3 + lokasiA_5 - lokasiHS_5)/3
+            d_a = (lokasiA_1 - lokasiHS_1 + lokasiA_3 -
+                   lokasiHS_3 + lokasiA_5 - lokasiHS_5)/3
             d_a = str(round(d_a, 2))
-            d_g = (lokasiG_1 - lokasiHS_1 + lokasiG_3 - lokasiHS_3 + lokasiG_5 - lokasiHS_5)/3
+            d_g = (lokasiG_1 - lokasiHS_1 + lokasiG_3 -
+                   lokasiHS_3 + lokasiG_5 - lokasiHS_5)/3
             d_g = str(round(d_g, 2))
             self.beban_r.setText(d_r)
             self.beban_a.setText(d_a)
             self.beban_g.setText(d_g)
 
-            #panjang gelombang
+            # panjang gelombang
             lamdaR = (float(d_r)/float(lamda_rata))
             lamdaR = str(round(lamdaR, 2))
             lamdaA = (float(d_a)/float(lamda_rata))
@@ -528,7 +493,7 @@ class Modul_3(QMainWindow):
             self.lamda_a.setText(lamdaA)
             self.lamda_g.setText(lamdaG)
 
-            #vswr
+            # vswr
             vswr_r = math.sqrt(arusR_2/arusR_1)
             vswr_r = str(round(vswr_r, 2))
             vswr_a = math.sqrt(arusA_2/arusA_1)
@@ -539,7 +504,7 @@ class Modul_3(QMainWindow):
             self.vswr_a.setText(vswr_a)
             self.vswr_g.setText(vswr_g)
 
-            #koefisien pantul
+            # koefisien pantul
             kp_R = (float(vswr_r) - 1)/(float(vswr_r) + 1)
             kp_R = str(round(kp_R, 2))
             kp_A = (float(vswr_a) - 1)/(float(vswr_a) + 1)
@@ -550,7 +515,7 @@ class Modul_3(QMainWindow):
             self.koefpantul_a.setText(kp_A)
             self.koefpantul_g.setText(kp_G)
 
-            #return loss
+            # return loss
             rl_r = 20*math.log10((float(vswr_r) + 1)/(float(vswr_r) - 1))
             rl_r = str(round(rl_r, 2))
             rl_a = 20*math.log10((float(vswr_a) + 1)/(float(vswr_a) - 1))
@@ -561,7 +526,7 @@ class Modul_3(QMainWindow):
             self.rl_a.setText(rl_a)
             self.rl_g.setText(rl_g)
 
-            #presentase daya yang dipantulkan
+            # presentase daya yang dipantulkan
             pr_r = (float(kp_R)**2)*100
             pr_r = str(round(pr_r, 2))
             persen_r = pr_r + "%"
@@ -579,8 +544,9 @@ class Modul_3(QMainWindow):
             QMessageBox.about(self, "Error", "Isi semua input!")
 
     def back_main_menu(self):
-        payload = {'activity' : 'Main Menu'}
-        requests.put(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
+        payload = {'activity': 'Main Menu'}
+        requests.put(
+            f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
         self.CurrentWindow = Modul_modulpage(self.nama, self.npm, self.token)
         self.force_close = False
         self.CurrentWindow.show()
@@ -588,18 +554,218 @@ class Modul_3(QMainWindow):
 
     def closeEvent(self, event):
         if self.force_close is True:
-            requests.delete(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
+            requests.delete(
+                f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
             sys.exit(0)
 
 
-class Modul_6(QMainWindow):
+class Modul_4(QMainWindow):
     def __init__(self, nama, npm, token):
         self.nama = nama
         self.npm = npm
         self.token = token
         QMainWindow.__init__(self)
-        loadUi("Modul_6.ui", self)
-        self.setWindowTitle("Modul 6 (Kalkulator) - Regresi dan Klasifikasi")
+        loadUi("Modul_4.ui", self)
+        self.setWindowTitle("Modul 4 Bode Plot")
+        self.back_button.clicked.connect(self.back_main_menu)
+        self.nama_label.setText(f'Nama: {self.nama}')
+        self.npm_label.setText(f'NPM: {self.npm}')
+        self.generate.clicked.connect(self.plotgrap)
+        self.graph.clicked.connect(self.graphnew)
+        self.bode.clicked.connect(self.plotbode)
+        self.bode_compe.clicked.connect(self.plotbodecompe)
+        app.aboutToQuit.connect(self.closeEvent)
+        self.force_close = True
+        self.btngroup1 = QButtonGroup()
+
+        self.btngroup1.addButton(self.lag)
+        self.btngroup1.addButton(self.lead)
+
+        self.lag.toggled.connect(lambda: self.compesator(self.lag))
+        self.lead.toggled.connect(lambda: self.compesator(self.lead))
+
+    def compesator(self, a):
+        if a.text() == "Lead Compensator":
+            if a.isChecked() == True:
+                self.compeset = "lead"
+        if a.text() == "Lag Compensator":
+            if a.isChecked() == True:
+                self.compeset = "lag"
+    
+    def plotgrap(self):
+        try:
+            self.nums = float(self.num.toPlainText())
+            self.denums = float(self.denum.toPlainText())
+            self.denums2 = float(self.denum_2.toPlainText())
+            self.denums3 = float(self.denum_3.toPlainText())
+            self.denums4 = float(self.denum_4.toPlainText())
+            self.kvs = float(self.kv.toPlainText())
+            self.os = float(self.OS.toPlainText())
+            zeta = -1*np.log((self.os)/100)/math.sqrt(pi **
+                                                      2+(np.log((self.os)/100))**2)
+            self.damping.setText(f'ζ = {("{:.2f}".format(zeta))}')
+
+            fasa_baru = np.arctan(
+                (2*zeta)/math.sqrt(-2*(zeta)**2 + math.sqrt(1+4*(zeta)**4)))*57.2958
+            self.phasa.setText(f'ϕmnew = {"{:.2f}".format(fasa_baru)}')
+            x = symbols('x')
+            fungsi = (self.nums*x)/(self.denums*x**3 +
+                                    self.denums2*x**2+self.denums3*x+self.denums4)
+            hasil_limit = limit(fungsi, x, 0)
+            self.k = float("{:.2f}".format(self.kvs/hasil_limit))
+            self.nun = np.array([self.k*self.nums])
+            self.dem = np.array([self.denums, self.denums2,
+                                self.denums3, self.denums4+self.k*self.nums])
+            self.dem_temp = np.array([self.denums, self.denums2,self.denums3, self.denums4])
+            H = control.tf(self.nun, self.dem)
+            Hsd = control.tf(self.nun,self.dem_temp)
+            t, y = control.step_response(H)
+            _, self.pm, self.wg, self.wp = control.matlab.margin(Hsd)
+            fasa_max = 0
+            self.N = int((10-0.01)/0.01+1)
+            Hs = signal.TransferFunction(self.nun, self.dem_temp)
+            self.w, self.mag, self.phase = signal.bode(Hs, np.linspace(0.01, 10, self.N))
+
+            if self.compeset == "lag":
+                fasa_max = -180 + fasa_baru + 10
+                self.phasa_max.setText(f'ϕmax = {"{:.2f}".format(fasa_max)}')
+                temp_min = []
+                index_min = 0
+                for i in range(len(self.phase)):
+                    temp_min.append(abs(self.phase[i]-fasa_max))
+                minimal_value = min(temp_min)
+                for i in range(len(temp_min)):
+                    if temp_min[i] == minimal_value:
+                        index_min = i
+                        break
+                self.besaran.setText(f'Mmax = {round(self.mag[index_min],2)}')
+                self.frekuensimax.setText(f'ωmax = {self.w[index_min]}')
+                self.zc = self.w[index_min]/10
+                self.kc = 1/self.mag[index_min]
+                self.pc = self.zc/self.mag[index_min]
+                self.num_compe.setText(f'{round(self.kc,3)}(s+{round(self.zc,3)})')
+                self.denum_compe.setText(f's+{round(self.pc,3)}')
+            else:
+                fasa_max = -self.pm + fasa_baru + 10
+                self.phasa_max.setText(f'ϕmax = {"{:.2f}".format(fasa_max)}')
+                alpha = (1-np.sin(fasa_max*0.0174533))/(1+np.sin(fasa_max*0.0174533))
+                m_max = 20*np.log10(math.sqrt(alpha))
+                self.besaran.setText(f'Mmax = {round(m_max,2)}')
+                temp_min = []
+                index_min = 0
+                for i in range(len(self.mag)):
+                    temp_min.append(abs(self.mag[i]-m_max))
+                minimal_value = min(temp_min)
+                for i in range(len(temp_min)):
+                    if temp_min[i] == minimal_value:
+                        index_min = i
+                        break
+                self.frekuensimax.setText(f'ωmax = {self.w[index_min]}')
+                self.zc = self.w[index_min]*math.sqrt(alpha)
+                self.pc = self.zc/alpha
+                self.kc = 1/alpha
+                self.num_compe.setText(f'{round(self.kc,2)}(s+{round(self.zc,2)})')
+                self.denum_compe.setText(f's+{round(self.pc,2)}')
+
+            self.plotresponse.canvas.axes.clear()
+            self.plotresponse.canvas.axes.plot(t, y, 'r')
+            self.plotresponse.canvas.axes.legend('Tanpa Compensator')
+            self.plotresponse.canvas.axes.set_xlabel("Time")
+            self.plotresponse.canvas.axes.set_ylabel("Magnitude")
+            self.plotresponse.canvas.axes.set_title("Frequency Response (Closed Loop)")
+            self.plotresponse.canvas.axes.grid()
+            self.plotresponse.canvas.figure.tight_layout()
+            self.plotresponse.canvas.draw()
+        except Exception:
+            QMessageBox.about(
+                self, "Error", "Isi semua input!")
+
+    def plotbodecompe(self):
+        try:
+            num1 = np.array([self.kc, self.kc*self.zc])
+            denum1 = np.array([1,self.pc])
+            self.numTot = np.convolve(num1,self.nun)
+            self.denumTot = np.convolve(denum1,self.dem)
+            H = control.tf(self.numTot, self.denumTot)
+            Hsd = control.tf(self.numTot,np.convolve(denum1,self.dem_temp))
+            self.h, self.j = control.step_response(H)
+            _, _, wa, wb = control.matlab.margin(Hsd)
+            Hs = signal.TransferFunction(self.numTot, np.convolve(denum1,self.dem_temp))
+            a, b, c = signal.bode(Hs, np.linspace(0.01, 10, self.N))
+            ax1 = plt.subplot(2, 1, 1)
+            ax1.semilogx(a, b)
+            ax1.set_title("Bode Plot")
+            ax1.grid(b=None, which='major', axis='both')
+            ax1.grid(b=None, which='minor', axis='both')
+            ax1.set_ylabel(f'Magnitude (dB), GM = {"{:.2f}".format(wa)}')
+            ax2 = plt.subplot(2, 1, 2)
+            ax2.semilogx(a, c)
+            ax2.grid(b=None, which='major', axis='both')
+            ax2.grid(b=None, which='minor', axis='both')
+            ax2.set_ylabel(f'Phase (deg), FM = {"{:.2f}".format(wb)}')
+            ax2.set_xlabel("Frequency (rad/sec)")
+            plt.show()
+        except Exception:
+            QMessageBox.about(
+                self, "Error", "Isi semua input!")
+    def graphnew(self):
+        try:
+            num1 = np.array([self.kc, self.kc*self.zc])
+            denum1 = np.array([1,self.pc])
+            self.numTot = np.convolve(num1,self.nun)
+            self.denumTot = np.convolve(denum1,self.dem)
+            H = control.tf(self.numTot, self.denumTot)
+            self.h, self.j = control.step_response(H)
+            self.plotresponse.canvas.axes.plot(self.h, self.j, 'b')
+            self.plotresponse.canvas.figure.tight_layout()
+            self.plotresponse.canvas.draw()
+        except Exception:
+            QMessageBox.about(
+                self, "Error", "Isi semua input!")
+
+    def plotbode(self):
+        try:
+            ax1 = plt.subplot(2, 1, 1)
+            ax1.semilogx(self.w, self.mag)
+            ax1.set_title("Bode Plot")
+            ax1.grid(b=None, which='major', axis='both')
+            ax1.grid(b=None, which='minor', axis='both')
+            ax1.set_ylabel(f'Magnitude (dB), GM = {"{:.2f}".format(self.wg)}')
+            ax2 = plt.subplot(2, 1, 2)
+            ax2.semilogx(self.w, self.phase)
+            ax2.grid(b=None, which='major', axis='both')
+            ax2.grid(b=None, which='minor', axis='both')
+            ax2.set_ylabel(f'Phase (deg), FM = {"{:.2f}".format(self.wp)}')
+            ax2.set_xlabel("Frequency (rad/sec)")
+            plt.show()
+        except Exception:
+            QMessageBox.about(
+                self, "Error", "Isi semua input!")
+
+    def back_main_menu(self):
+        payload = {'activity': 'Main Menu'}
+        requests.put(
+            f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
+        self.CurrentWindow = Modul_modulpage(self.nama, self.npm, self.token)
+        self.force_close = False
+        self.CurrentWindow.show()
+        self.close()
+
+    def closeEvent(self, event):
+        if self.force_close is True:
+            requests.delete(
+                f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
+            sys.exit(0)
+
+
+class Modul_5(QMainWindow):
+    def __init__(self, nama, npm, token):
+        self.nama = nama
+        self.npm = npm
+        self.token = token
+        QMainWindow.__init__(self)
+        loadUi("Modul_5.ui", self)
+        self.setWindowTitle("Modul 5 (Kalkulator) - Regresi")
         self.back_button.clicked.connect(self.back_main_menu)
         self.nama_label.setText(f'Nama: {self.nama}')
         self.npm_label.setText(f'NPM: {self.npm}')
@@ -686,7 +852,7 @@ class Modul_6(QMainWindow):
             else:
                 nilai_y_list = [1/y for y in nilai_y_list]
 
-            if len(nilai_w_list) != len(nilai_y_list): 
+            if len(nilai_w_list) != len(nilai_y_list):
                 raise Exception('Panjang Data Fitur dan Label harus sama!')
             sum_of_xy = 0
             sum_of_x = 0
@@ -711,9 +877,11 @@ class Modul_6(QMainWindow):
             mse_raw = 0
             x = np.linspace(min(nilai_w_list)-1, max(nilai_w_list)+1, 1000)
             y = self.w*x + self.b
-            for i in range(len(nilai_w_list)): 
-                mse_raw = mse_raw + (self.b + nilai_w_list[i]*self.w - nilai_y_list[i])**2
-            korelation_r = (len(nilai_w_list)*sum_of_xy - sum_of_x*sum_of_y)/(math.sqrt((len(nilai_w_list)*sum_of_xsquare-(sum_of_x)**2))*math.sqrt(len(nilai_y_list)*sum_of_ysquare-(sum_of_y)**2))
+            for i in range(len(nilai_w_list)):
+                mse_raw = mse_raw + \
+                    (self.b + nilai_w_list[i]*self.w - nilai_y_list[i])**2
+            korelation_r = (len(nilai_w_list)*sum_of_xy - sum_of_x*sum_of_y)/(math.sqrt((len(nilai_w_list)
+                                                                                         * sum_of_xsquare-(sum_of_x)**2))*math.sqrt(len(nilai_y_list)*sum_of_ysquare-(sum_of_y)**2))
             mse = mse_raw/(len(nilai_w_list))
             self.korelasi.setText(f'R = {"{:.2f}".format(korelation_r)}')
             self.mse.setText(f'MSE = {"{:.2f}".format(mse)}')
@@ -725,9 +893,11 @@ class Modul_6(QMainWindow):
             plt.show()
         except Exception:
             if len(nilai_w_list) != len(nilai_y_list):
-                QMessageBox.about(self, "Error", 'Panjang Data Fitur dan Label harus sama!')
+                QMessageBox.about(
+                    self, "Error", 'Panjang Data Fitur dan Label harus sama!')
             else:
-                QMessageBox.about(self, "Error", "Isi semua input dengan benar!")
+                QMessageBox.about(
+                    self, "Error", "Isi semua input dengan benar!")
 
     def predicted_value(self):
         try:
@@ -746,8 +916,9 @@ class Modul_6(QMainWindow):
             QMessageBox.about(self, "Error", "Bukan Nilai!")
 
     def back_main_menu(self):
-        payload = {'activity' : 'Main Menu'}
-        requests.put(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
+        payload = {'activity': 'Main Menu'}
+        requests.put(
+            f'https://gui-kel-1.herokuapp.com/profiles/{self.token}', data=payload)
         self.CurrentWindow = Modul_modulpage(self.nama, self.npm, self.token)
         self.force_close = False
         self.CurrentWindow.show()
@@ -755,7 +926,8 @@ class Modul_6(QMainWindow):
 
     def closeEvent(self, event):
         if self.force_close is True:
-            requests.delete(f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
+            requests.delete(
+                f'https://gui-kel-1.herokuapp.com/profiles/{self.token}')
             sys.exit(0)
 
 

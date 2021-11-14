@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Modul_6.ui'
+# Form implementation generated from reading ui file 'Modul_5.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -280,3 +280,13 @@ class Ui_Modul_modulpage(object):
         self.groupBox_3.setTitle(_translate("Modul_modulpage", "HASIL PREDIKSI"))
         self.korelasi.setText(_translate("Modul_modulpage", "R = 0"))
         self.label_7.setText(_translate("Modul_modulpage", "KALKULATOR REGRESI"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Modul_modulpage = QtWidgets.QMainWindow()
+    ui = Ui_Modul_modulpage()
+    ui.setupUi(Modul_modulpage)
+    Modul_modulpage.show()
+    sys.exit(app.exec_())

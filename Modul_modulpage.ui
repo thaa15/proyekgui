@@ -74,7 +74,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>140</y>
+      <y>180</y>
       <width>251</width>
       <height>51</height>
      </rect>
@@ -103,7 +103,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>140</y>
+      <y>180</y>
       <width>251</width>
       <height>51</height>
      </rect>
@@ -132,7 +132,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>210</y>
+      <y>260</y>
       <width>251</width>
       <height>51</height>
      </rect>
@@ -161,7 +161,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>210</y>
+      <y>260</y>
       <width>251</width>
       <height>51</height>
      </rect>
@@ -189,8 +189,8 @@ QPushButton:hover {
    <widget class="QPushButton" name="modul_5_button">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>280</y>
+      <x>270</x>
+      <y>340</y>
       <width>251</width>
       <height>51</height>
      </rect>
@@ -213,35 +213,6 @@ QPushButton:hover {
     </property>
     <property name="text">
      <string>MODUL 5</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="modul_6_button">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>280</y>
-      <width>251</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    background-color: #2B5DD1;
-    color: #FFFFFF;
-    padding: 2px;
-    border-radius: 10px;
-}
-QPushButton:hover {
-    background-color: lightgreen;
-}</string>
-    </property>
-    <property name="text">
-     <string>MODUL 6</string>
     </property>
    </widget>
    <widget class="QLabel" name="nama_label">

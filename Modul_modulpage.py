@@ -44,7 +44,7 @@ class Ui_Modul_modulpage(object):
 "}")
         self.logout_button.setObjectName("logout_button")
         self.modul_1_button = QtWidgets.QPushButton(self.centralwidget)
-        self.modul_1_button.setGeometry(QtCore.QRect(130, 140, 251, 51))
+        self.modul_1_button.setGeometry(QtCore.QRect(130, 180, 251, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.modul_1_button.setFont(font)
@@ -59,7 +59,7 @@ class Ui_Modul_modulpage(object):
 "}")
         self.modul_1_button.setObjectName("modul_1_button")
         self.modul_2_button = QtWidgets.QPushButton(self.centralwidget)
-        self.modul_2_button.setGeometry(QtCore.QRect(410, 140, 251, 51))
+        self.modul_2_button.setGeometry(QtCore.QRect(410, 180, 251, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.modul_2_button.setFont(font)
@@ -74,7 +74,7 @@ class Ui_Modul_modulpage(object):
 "}")
         self.modul_2_button.setObjectName("modul_2_button")
         self.modul_3_button = QtWidgets.QPushButton(self.centralwidget)
-        self.modul_3_button.setGeometry(QtCore.QRect(130, 210, 251, 51))
+        self.modul_3_button.setGeometry(QtCore.QRect(130, 260, 251, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.modul_3_button.setFont(font)
@@ -89,7 +89,7 @@ class Ui_Modul_modulpage(object):
 "}")
         self.modul_3_button.setObjectName("modul_3_button")
         self.modul_4_button = QtWidgets.QPushButton(self.centralwidget)
-        self.modul_4_button.setGeometry(QtCore.QRect(410, 210, 251, 51))
+        self.modul_4_button.setGeometry(QtCore.QRect(410, 260, 251, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.modul_4_button.setFont(font)
@@ -104,7 +104,7 @@ class Ui_Modul_modulpage(object):
 "}")
         self.modul_4_button.setObjectName("modul_4_button")
         self.modul_5_button = QtWidgets.QPushButton(self.centralwidget)
-        self.modul_5_button.setGeometry(QtCore.QRect(130, 280, 251, 51))
+        self.modul_5_button.setGeometry(QtCore.QRect(270, 340, 251, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.modul_5_button.setFont(font)
@@ -118,21 +118,6 @@ class Ui_Modul_modulpage(object):
 "    background-color: lightgreen;\n"
 "}")
         self.modul_5_button.setObjectName("modul_5_button")
-        self.modul_6_button = QtWidgets.QPushButton(self.centralwidget)
-        self.modul_6_button.setGeometry(QtCore.QRect(410, 280, 251, 51))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.modul_6_button.setFont(font)
-        self.modul_6_button.setStyleSheet("QPushButton {\n"
-"    background-color: #2B5DD1;\n"
-"    color: #FFFFFF;\n"
-"    padding: 2px;\n"
-"    border-radius: 10px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"    background-color: lightgreen;\n"
-"}")
-        self.modul_6_button.setObjectName("modul_6_button")
         self.nama_label = QtWidgets.QLabel(self.centralwidget)
         self.nama_label.setGeometry(QtCore.QRect(10, 0, 161, 21))
         self.nama_label.setStyleSheet("QLabel{\n"
@@ -167,7 +152,6 @@ class Ui_Modul_modulpage(object):
         self.modul_3_button.setText(_translate("Modul_modulpage", "MODUL 3"))
         self.modul_4_button.setText(_translate("Modul_modulpage", "MODUL 4"))
         self.modul_5_button.setText(_translate("Modul_modulpage", "MODUL 5"))
-        self.modul_6_button.setText(_translate("Modul_modulpage", "MODUL 6"))
         self.nama_label.setText(_translate("Modul_modulpage", "Nama"))
         self.npm_label.setText(_translate("Modul_modulpage", "NPM"))
 

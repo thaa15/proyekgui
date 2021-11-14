@@ -86,8 +86,8 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="signin_button">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>220</y>
+      <x>210</x>
+      <y>260</y>
       <width>131</width>
       <height>31</height>
      </rect>
@@ -99,26 +99,6 @@ border: 1px solid rgb(238, 65, 76) radius</string>
     </property>
     <property name="text">
      <string>SIGN IN</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="camera_button">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>260</y>
-      <width>181</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color:rgb(238, 65, 76);
-font: 8pt &quot;Raleway medium&quot;;
-color:rgb(237, 238, 233)
-
-</string>
-    </property>
-    <property name="text">
-     <string>Login dengan kamera</string>
     </property>
    </widget>
    <widget class="QTextEdit" name="npm_input">
@@ -168,7 +148,6 @@ color:rgb(1, 42, 59);</string>
    <zorder>label</zorder>
    <zorder>nama_input</zorder>
    <zorder>signin_button</zorder>
-   <zorder>camera_button</zorder>
    <zorder>npm_input</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">

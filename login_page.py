@@ -15,7 +15,8 @@ class Ui_LoginPage(object):
     def setupUi(self, LoginPage):
         LoginPage.setObjectName("LoginPage")
         LoginPage.resize(554, 417)
-        LoginPage.setStyleSheet("background: rgb(1, 42, 59);")
+        LoginPage.setStyleSheet("background: rgb(1, 42, 59);\n"
+"color: white;")
         self.centralwidget = QtWidgets.QWidget(LoginPage)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
@@ -48,19 +49,11 @@ class Ui_LoginPage(object):
         self.nama_input.setTabChangesFocus(True)
         self.nama_input.setObjectName("nama_input")
         self.signin_button = QtWidgets.QPushButton(self.centralwidget)
-        self.signin_button.setGeometry(QtCore.QRect(200, 220, 131, 31))
+        self.signin_button.setGeometry(QtCore.QRect(210, 260, 131, 31))
         self.signin_button.setStyleSheet("font: 8pt \"Raleway\";\n"
 "color: rgb(237, 238, 233);\n"
 "border: 1px solid rgb(238, 65, 76) radius")
         self.signin_button.setObjectName("signin_button")
-        self.camera_button = QtWidgets.QPushButton(self.centralwidget)
-        self.camera_button.setGeometry(QtCore.QRect(180, 260, 181, 31))
-        self.camera_button.setStyleSheet("background-color:rgb(238, 65, 76);\n"
-"font: 8pt \"Raleway medium\";\n"
-"color:rgb(237, 238, 233)\n"
-"\n"
-"")
-        self.camera_button.setObjectName("camera_button")
         self.npm_input = QtWidgets.QTextEdit(self.centralwidget)
         self.npm_input.setGeometry(QtCore.QRect(170, 160, 201, 41))
         font = QtGui.QFont()
@@ -84,7 +77,6 @@ class Ui_LoginPage(object):
         self.label.raise_()
         self.nama_input.raise_()
         self.signin_button.raise_()
-        self.camera_button.raise_()
         self.npm_input.raise_()
         LoginPage.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(LoginPage)
@@ -108,7 +100,6 @@ class Ui_LoginPage(object):
 "</style></head><body style=\" font-family:\'Raleway\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'MS Shell Dlg 2\'; font-size:12pt;\"><br /></p></body></html>"))
         self.signin_button.setText(_translate("LoginPage", "SIGN IN"))
-        self.camera_button.setText(_translate("LoginPage", "Login dengan kamera"))
 import assets_gambar_rc
 
 

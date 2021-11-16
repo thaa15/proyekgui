@@ -619,12 +619,12 @@ class Modul_4(QMainWindow):
             self.dem_temp = np.array([self.denums, self.denums2,self.denums3, self.denums4])
             H = control.tf(self.nun, self.dem)
             Hsd = control.tf(self.nun,self.dem_temp)
-            t, y = control.step_response(H)
+            t, y = control.step_response(H,np.linspace(0,20,1000))
             _, self.pm, self.wg, self.wp = control.matlab.margin(Hsd)
             fasa_max = 0
-            self.N = int((10-0.01)/0.01+1)
+            self.N = int((20-0.01)/0.01+1)
             Hs = signal.TransferFunction(self.nun, self.dem_temp)
-            self.w, self.mag, self.phase = signal.bode(Hs, np.linspace(0.01, 10, self.N))
+            self.w, self.mag, self.phase = signal.bode(Hs, np.linspace(0.01, 20, self.N))
 
             if self.compeset == "lag":
                 fasa_max = -180 + fasa_baru + 10
@@ -639,7 +639,7 @@ class Modul_4(QMainWindow):
                         index_min = i
                         break
                 self.besaran.setText(f'Mmax = {round(self.mag[index_min],2)}')
-                self.frekuensimax.setText(f'ωmax = {self.w[index_min]}')
+                self.frekuensimax.setText(f'ωmax = {round(self.w[index_min],2)}')
                 self.zc = self.w[index_min]/10
                 self.kc = 1/self.mag[index_min]
                 self.pc = self.zc/self.mag[index_min]
@@ -660,7 +660,7 @@ class Modul_4(QMainWindow):
                     if temp_min[i] == minimal_value:
                         index_min = i
                         break
-                self.frekuensimax.setText(f'ωmax = {self.w[index_min]}')
+                self.frekuensimax.setText(f'ωmax = {round(self.w[index_min],2)}')
                 self.zc = self.w[index_min]*math.sqrt(alpha)
                 self.pc = self.zc/alpha
                 self.kc = 1/alpha
@@ -685,13 +685,15 @@ class Modul_4(QMainWindow):
             num1 = np.array([self.kc, self.kc*self.zc])
             denum1 = np.array([1,self.pc])
             self.numTot = np.convolve(num1,self.nun)
-            self.denumTot = np.convolve(denum1,self.dem)
+            self.denumTot = np.convolve(denum1,self.dem_temp)
+            self.denumTot[3] = self.denumTot[3] + self.numTot[0]
+            self.denumTot[4] = self.denumTot[4] + self.numTot[1]
             H = control.tf(self.numTot, self.denumTot)
             Hsd = control.tf(self.numTot,np.convolve(denum1,self.dem_temp))
-            self.h, self.j = control.step_response(H)
+            self.h, self.j = control.step_response(H,np.linspace(0,20,1000))
             _, _, wa, wb = control.matlab.margin(Hsd)
             Hs = signal.TransferFunction(self.numTot, np.convolve(denum1,self.dem_temp))
-            a, b, c = signal.bode(Hs, np.linspace(0.01, 10, self.N))
+            a, b, c = signal.bode(Hs, np.linspace(0.01, 20, self.N))
             ax1 = plt.subplot(2, 1, 1)
             ax1.semilogx(a, b)
             ax1.set_title("Bode Plot")
@@ -713,13 +715,18 @@ class Modul_4(QMainWindow):
             num1 = np.array([self.kc, self.kc*self.zc])
             denum1 = np.array([1,self.pc])
             self.numTot = np.convolve(num1,self.nun)
-            self.denumTot = np.convolve(denum1,self.dem)
+            self.denumTot = np.convolve(denum1,self.dem_temp)
+            self.denumTot[3] = self.denumTot[3] + self.numTot[0]
+            self.denumTot[4] = self.denumTot[4] + self.numTot[1]
             H = control.tf(self.numTot, self.denumTot)
-            self.h, self.j = control.step_response(H)
+            self.h, self.j = control.step_response(H,np.linspace(0,20,1000))
             self.plotresponse.canvas.axes.plot(self.h, self.j, 'b')
             self.plotresponse.canvas.figure.tight_layout()
             self.plotresponse.canvas.draw()
-        except Exception:
+        except Exception as ex:
+            ex_type, ex_value,_ = sys.exc_info()
+            print("Exception type : %s " % ex_type.__name__)
+            print("Exception message : %s" %ex_value)
             QMessageBox.about(
                 self, "Error", "Isi semua input!")
 
